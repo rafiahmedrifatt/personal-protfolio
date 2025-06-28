@@ -14,9 +14,9 @@ const Navbar = () => {
     ]
 
     return (
-        <div className="navbar bg-base-100 sticky">
+        <div className="navbar bg-transparent sticky top-0 z-50">
             <div className="navbar-start">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <img src="./logo.png" alt="Logo" className="bg-transparent w-32 h-20 object-cover" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
