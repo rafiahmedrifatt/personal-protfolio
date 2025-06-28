@@ -1,8 +1,10 @@
 import React from 'react';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { NavLink } from 'react-router';
 
 // TODO: ON CLICK RESUME WILL BE DOWNLOADED
 // TODO: LOGO NEED TO PLACE
+// TODO: Z index need to be fixed
 
 const Navbar = () => {
 
@@ -14,7 +16,7 @@ const Navbar = () => {
     ]
 
     return (
-        <div className="navbar bg-transparent sticky top-0 z-50">
+        <div className="navbar md:sticky top-0 z-1 bg-white sticky">
             <div className="navbar-start">
                 <img src="./logo.png" alt="Logo" className="bg-transparent w-32 h-20 object-cover" />
             </div>
@@ -23,7 +25,7 @@ const Navbar = () => {
                     {
                         link.map(singleLink =>
                             <li key={singleLink.to}>
-                                <a className='inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold  hover:shadow-inner hover:shadow-white/10 data-open:bg-gray-700 mr-10'>{singleLink.display}</a>
+                                <NavLink className={({ isActive }) => { `inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold data-open:bg-gray-700 mr-10 ${isActive ? 'text-primary' : ''}` }}>{singleLink.display}</NavLink>
                             </li>)
                     }
 
@@ -31,7 +33,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <a className="btn hidden lg:flex btn-primary hover:shadow-inner hover:shadow-white/10">Resume</a>
-                <div className="fixed lg:hidden">
+                <div className="lg:hidden">
                     <Menu>
                         <MenuButton className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold  shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-700 data-open:bg-gray-700">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -47,7 +49,7 @@ const Navbar = () => {
                         >
                             {
                                 link.map(singleLink =>
-                                    <MenuItem key={singleLink.to} className="bg-white">
+                                    <MenuItem key={singleLink.to} className="bg-white z-10">
                                         <button className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5">
                                             {singleLink.display}
                                         </button>

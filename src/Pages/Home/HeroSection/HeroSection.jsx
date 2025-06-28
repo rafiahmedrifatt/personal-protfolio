@@ -106,7 +106,7 @@ const HeroSection = () => {
             <div className='lg:w-1/3 mt-12 lg:mt-0 flex justify-center'>
                 <div className='relative'>
                     <div
-                        className='absolute -inset-4 rounded-lg opacity-60 bg-primary'
+                        className='absolute -inset-4 rounded-lg opacity-60 bg-secondary'
                     ></div>
                     <img
                         src="/profilePhoto.jpg"
