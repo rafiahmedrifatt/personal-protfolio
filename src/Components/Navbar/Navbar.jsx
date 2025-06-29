@@ -1,9 +1,8 @@
 import React from 'react';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { NavLink } from 'react-router';
+import { Link } from 'react-scroll';
 
-// TODO: ON CLICK RESUME WILL BE DOWNLOADED
-// TODO: LOGO NEED TO PLACE
 // TODO: Z index need to be fixed
 
 const Navbar = () => {
@@ -16,7 +15,7 @@ const Navbar = () => {
     ]
 
     return (
-        <div className="navbar md:sticky top-0 z-1 bg-white sticky">
+        <div className="navbar md:sticky top-0 z-[1] md:bg-white sticky">
             <div className="navbar-start">
                 <img src="./logo.png" alt="Logo" className="bg-transparent w-32 h-20 object-cover" />
             </div>
@@ -25,7 +24,7 @@ const Navbar = () => {
                     {
                         link.map(singleLink =>
                             <li key={singleLink.to}>
-                                <NavLink className={({ isActive }) => { `inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold data-open:bg-gray-700 mr-10 ${isActive ? 'text-primary' : ''}` }}>{singleLink.display}</NavLink>
+                                <Link to={singleLink.to} smooth={true} duration={500} offset={-80} className={({ isActive }) => { `inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold data-open:bg-gray-700 mr-10 ${isActive ? 'text-primary' : ''}` }}>{singleLink.display}</Link>
                             </li>)
                     }
 
@@ -49,10 +48,10 @@ const Navbar = () => {
                         >
                             {
                                 link.map(singleLink =>
-                                    <MenuItem key={singleLink.to} className="bg-white z-10">
-                                        <button className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5">
+                                    <MenuItem key={singleLink.to} className="bg-white z-[2]">
+                                        <Link to={singleLink.to} smooth={true} duration={500} offset={-80} className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5">
                                             {singleLink.display}
-                                        </button>
+                                        </Link>
                                     </MenuItem>
                                 )
                             }

@@ -4,7 +4,7 @@ const ContactSection = () => {
 
 
     return (
-        <div className='w-full max-w-6xl mx-auto px-4 py-16'>
+        <div id='contact' className='w-full max-w-6xl mx-auto px-4 py-16'>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
                 {/* Contact Info */}
                 <div className="space-y-8">
