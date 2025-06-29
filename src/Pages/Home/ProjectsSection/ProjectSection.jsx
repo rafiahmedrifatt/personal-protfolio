@@ -1,4 +1,6 @@
+import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import React from 'react';
+import ProjectModal from '../../../Components/Modal/ProjectModal';
 
 const ProjectSection = () => {
     const demoData = [
@@ -91,7 +93,6 @@ const ProjectSection = () => {
         }
     ];
 
-
     return (
         <div id='projects' className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-16">
             <div className="max-w-7xl mx-auto p-8">
@@ -172,24 +173,26 @@ const ProjectSection = () => {
                                                     </svg>
                                                     Github Link
                                                 </a>
-                                                <a
-                                                    href={singleData.details}
+                                                <button
+                                                    onClick={() => document.getElementById(`my_modal_${singleData.id}`).showModal()}
                                                     className='px-4 py-2 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-slate-200 hover:to-slate-100 hover:border-slate-300 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 flex items-center gap-3 group/btn'
                                                 >
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="group-hover/btn:rotate-12 transition-transform duration-300">
                                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                                                     </svg>
                                                     Details
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <ProjectModal singleData={singleData} />
                         </div>
                     )}
                 </div>
             </div>
+
         </div>
     );
 };
