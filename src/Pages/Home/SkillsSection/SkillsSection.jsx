@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 
 const SkillsSection = () => {
     return (
-        <div className='mb-20'>
+        <div className='mb-40 py-12'>
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-5xl font-bold text-gray-800 mb-3">

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutSection = () => {
     return (
-        <div className='min-h-screen bg-white py-20 px-6 lg:px-12'>
+        <div className='bg-white py-40 px-6 lg:px-12'>
             <div className='max-w-4xl mx-auto'>
                 {/* Section Header */}
                 <div className='text-center mb-16'>
