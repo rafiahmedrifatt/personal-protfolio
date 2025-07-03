@@ -1,6 +1,24 @@
+import emailjs from '@emailjs/browser';
 import React from 'react';
 
 const ContactSection = () => {
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        // const form = e.target;
+        // const formData = new FormData(form)
+        // const formObj = Object.fromEntries(formData)
+
+        emailjs.sendForm('service_2ty4dp9', 'template_s2srvyp', e.target, 'N871wuv_mpCTd7wBl')
+            .then(
+                () => {
+                    e.target.reset()
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    }
 
 
     return (
@@ -26,7 +44,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <p className="font-medium text-gray-900">Email</p>
-                                <p className="hover:opacity-80 cursor-pointer text-secondary">rafiahmedrifat1@gmail.com</p>
+                                <a href='mailto:rafiahmedrifat1@gmail.com' className="hover:opacity-80 cursor-pointer text-secondary">rafiahmedrifat1@gmail.com</a>
                             </div>
                         </div>
 
@@ -38,7 +56,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <p className="font-medium text-gray-900">Phone</p>
-                                <p className="hover:opacity-80 cursor-pointer text-primary" >01516549414</p>
+                                <a href='http://wa.me/+8801516549414' className="hover:opacity-80 cursor-pointer text-primary" >+8801516549414</a>
                             </div>
                         </div>
 
@@ -58,82 +76,84 @@ const ContactSection = () => {
                 </div>
 
                 {/* Contact Form */}
-                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send a Message</h3>
+                <form onSubmit={handleSubmit}>
+                    <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send a Message</h3>
 
-                    <div className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                                        Full Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                                        placeholder="Your full name"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                        Email Address *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                                        placeholder="your.email@example.com"
+                                    />
+                                </div>
+                            </div>
+
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Full Name *
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                                    Phone Number
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    id="phone"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                                    placeholder="Your phone number"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                                    Subject *
                                 </label>
                                 <input
                                     type="text"
-                                    name="name"
-                                    id="name"
+                                    name="subject"
+                                    id="subject"
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                                    placeholder="Your full name"
+                                    placeholder="What's this about?"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Email Address *
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                                    Message *
                                 </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                                    placeholder="your.email@example.com"
+                                <textarea
+                                    name="message"
+                                    id="message"
+                                    rows={5}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none resize-vertical"
+                                    placeholder="Tell me about your project or how I can help..."
                                 />
                             </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                                Phone Number
-                            </label>
-                            <input
-                                type="tel"
-                                name="phone"
-                                id="phone"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                                placeholder="Your phone number"
-                            />
+                            <button type='submit' className='w-full bg-primary p-3 rounded text-white'>
+                                Send Message
+                            </button>
                         </div>
-
-                        <div>
-                            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                                Subject *
-                            </label>
-                            <input
-                                type="text"
-                                name="subject"
-                                id="subject"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                                placeholder="What's this about?"
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                                Message *
-                            </label>
-                            <textarea
-                                name="message"
-                                id="message"
-                                rows={5}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none resize-vertical"
-                                placeholder="Tell me about your project or how I can help..."
-                            />
-                        </div>
-
-                        <button className='w-full bg-primary p-3 rounded text-white'>
-                            Send Message
-                        </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     );
