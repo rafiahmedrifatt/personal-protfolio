@@ -9,7 +9,7 @@ const ContactSection = () => {
         // const formData = new FormData(form)
         // const formObj = Object.fromEntries(formData)
 
-        emailjs.sendForm('service_2ty4dp9', 'template_s2srvyp', e.target, 'N871wuv_mpCTd7wBl')
+        emailjs.sendForm('service_aqzkdf8', 'template_s2srvyp', e.target, 'N871wuv_mpCTd7wBl')
             .then(
                 () => {
                     e.target.reset()

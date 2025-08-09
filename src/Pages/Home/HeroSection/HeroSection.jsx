@@ -5,7 +5,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const HeroSection = () => {
     return (
-        <div className='min-h-[70vh] bg-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-12 w-8/12 mx-auto'>
+        <div className='min-h-[70vh] bg-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-12 w-10/12 mx-auto'>
             <div className='lg:w-2/3 space-y-4 text-left'>
                 {/* Greeting */}
                 <p className='text-xl text-gray-600 font-light'>Hi, my name is</p>
@@ -102,7 +102,7 @@ const HeroSection = () => {
 
                 {/* CTA Button */}
                 <div className='pt-6'>
-                    <a href='https://drive.google.com/uc?export=download&id=1KE2fZd5_lLI0UgbtBuIrHApRiHaRrxpY'
+                    <a href='https://drive.google.com/uc?export=download&id=1_oazDyk1ny93iQy4RO8UCJ3n8mU_vZKC'
                         className='btn btn-primary px-8 py-3 text-white font-medium transition-all duration-200 rounded-sm shadow-sm hover:shadow-md'
                     >
                         Download CV

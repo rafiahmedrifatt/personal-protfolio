@@ -6,9 +6,57 @@ const ProjectSection = () => {
     const demoData = [
         {
             id: 1,
+            slug: "hostel-management-system",
+            title: "Hostel Management System",
+            image: "https://i.ibb.co.com/Z6r3ZThm/Screenshot-2025-08-10-at-2-22-28-AM.png",
+            description: "A full-stack MERN platform for managing university hostel meals, upcoming menus, and student reviews with role-based access for students and admins.",
+            features: [
+                "JWT-secured authentication with Firebase social login support",
+                "Persistent private routes with token validation",
+                "Meal management with add, update, delete, and like features",
+                "Server-side search, filtering, and sorting for meals",
+                "Infinite scrolling on the Meals page using React Query",
+                "Premium membership packages with Stripe payment integration",
+                "Meal request system with status tracking",
+                "Review system with edit and delete capabilities",
+                "Upcoming meals with premium-like restrictions and admin publish control",
+                "Responsive dashboards for both users and admins",
+                "SweetAlert2/Toast notifications for all CRUD and authentication actions",
+                "Dynamic page titles and SEO-friendly routing"
+            ],
+            challenges: [
+                "Implemented TanStack Query for efficient client-side data fetching and caching",
+                "Integrated Stripe checkout flow with backend payment validation",
+                "Added server-side pagination for dashboard tables",
+                "Used MongoDB indexing for optimized search performance",
+                "Managed role-based routes and admin privileges securely",
+                "Designed a fully responsive UI for mobile, tablet, and desktop",
+                "Handled real-time like counts and review counts across client and server"
+            ],
+            tech: [
+                "React",
+                "React Router",
+                "TailwindCSS",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Firebase Auth",
+                "JWT",
+                "TanStack Query",
+                "Stripe"
+            ],
+            live: "https://dorm-desk.web.app",
+            github: {
+                client: "https://github.com/rafiahmedrifatt/Dormdesk-full-stack-project/tree/main/client",
+                server: "https://github.com/rafiahmedrifatt/Dormdesk-full-stack-project/tree/main/server"
+            },
+            details: "UniHostel is a MERN-based hostel management platform designed to simplify meal tracking, upcoming meal previews, and student feedback in university hostels. With Stripe-powered memberships, role-based dashboards, persistent authentication, and optimized server-side search & filtering, UniHostel provides both students and admins with a seamless, efficient hostel experience."
+        },
+        {
+            id: 2,
             slug: "plant-care-tracker",
             title: "Plant Care Tracker",
-            image: "https://i.ibb.co/JWXScM9N/web10.png", // Replace with a screenshot of your app
+            image: "https://i.ibb.co/JWXScM9N/web10.png",
             description: "A full-stack plant care management app where users can track watering, fertilizing, and health updates for their plants with real-time reminders and user authentication.",
             features: [
                 "User authentication with email & Google login",
@@ -44,10 +92,10 @@ const ProjectSection = () => {
             details: "Plant Care Tracker is a responsive and theme-based plant management tool that allows plant lovers to track daily plant care activities. Built with a secure authentication system, users can add, view, and manage their own plant collection. The app includes personalized dashboards, sort & filter options, mobile-first design, meaningful error handling, and success feedback using third-party libraries like SweetAlert2. Ideal for plant parents who want to stay on top of their green responsibilities with ease and elegance."
         },
         {
-            id: 2,
+            id: 3,
             slug: "volunteer-management-platform",
             title: "Volunteer Management",
-            image: "https://i.ibb.co/0FVmRG2/volunteer-platform-cover.jpg", // Replace with actual screenshot
+            image: "https://i.ibb.co.com/wh0Q1Njk/web.png",
             description: "A secure and responsive platform where users can post volunteer needs, apply to help others, and manage their own posts and requests efficiently.",
             features: [
                 "JWT-based protected authentication system",
@@ -84,7 +132,7 @@ const ProjectSection = () => {
                 "JWT",
                 "Framer Motion",
             ],
-            live: "https://your-volunteer-app.netlify.app", // Replace with real URL
+            live: "https://volunteer-management-project.web.app/", // Replace with real URL
             github: {
                 client: "https://github.com/yourusername/volunteer-client",
                 server: "https://github.com/yourusername/volunteer-server"
@@ -92,7 +140,6 @@ const ProjectSection = () => {
             details: "HelpHub is a volunteer coordination platform built to streamline how communities connect with helping hands. With JWT-secured private routes, dynamic layout switching, volunteer tracking, and request management, the app ensures both organizers and volunteers have a smooth, effective experience. Feature-rich and performance-optimized, HelpHub shines in both UX and backend logic, making it a standout project in volunteer tech."
         }
     ];
-
     return (
         <div id='projects' className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-16">
             <div className="max-w-7xl mx-auto p-8">
@@ -157,6 +204,7 @@ const ProjectSection = () => {
                                             <div className='flex flex-wrap gap-4'>
                                                 <a
                                                     href={singleData.live}
+                                                    target='_blank'
                                                     className='px-4 py-2 bg-gradient-to-r from-blue-600 to-primary text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3 group/btn'
                                                 >
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="group-hover/btn:rotate-12 transition-transform duration-300">
@@ -165,7 +213,8 @@ const ProjectSection = () => {
                                                     Live Link
                                                 </a>
                                                 <a
-                                                    href={singleData.github}
+                                                    href={singleData.github.client}
+                                                    target='_blank'
                                                     className='px-4 py-2 border-2 border-primary font-semibold rounded-xl bg-slate-900 text-white hover:bg-slate-900 hover:border-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3 group/btn'
                                                 >
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="group-hover/btn:rotate-12 transition-transform duration-300">

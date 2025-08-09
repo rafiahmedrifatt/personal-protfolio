@@ -31,7 +31,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn hidden lg:flex btn-primary hover:shadow-inner hover:shadow-white/10">Resume</a>
+                <a href='https://drive.google.com/uc?export=download&id=1_oazDyk1ny93iQy4RO8UCJ3n8mU_vZKC' className="btn hidden lg:flex btn-primary hover:shadow-inner hover:shadow-white/10">Resume</a>
                 <div className="lg:hidden">
                     <Menu>
                         <MenuButton className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm/6 font-semibold  shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-700 data-open:bg-gray-700">
