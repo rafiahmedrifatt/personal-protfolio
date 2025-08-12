@@ -168,8 +168,8 @@ const ProjectSection = () => {
                                     />
                                 </div>
                                 {/* Content Section */}
-                                <div className={`p-8 lg:p-12 flex flex-col justify-center `}>
-                                    <div className="space-y-6">
+                                <div className={`p-4 lg:p-8 flex flex-col justify-center `}>
+                                    <div className="space-y-3">
                                         {/* Project Title */}
                                         <div className="relative">
                                             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900 group-hover:text-blue-800 transition-colors duration-500 leading-tight">
