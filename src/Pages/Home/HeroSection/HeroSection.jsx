@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
     return (
-        <div className='min-h-[70vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden'>
+        <div className='min-h-[80vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden'>
             {/* Background decorative elements */}
             <div className="absolute top-20 right-20 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-200/20 rounded-full blur-3xl"></div>
