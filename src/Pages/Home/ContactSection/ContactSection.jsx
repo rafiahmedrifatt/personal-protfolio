@@ -1,25 +1,34 @@
 import React from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const ContactSection = () => {
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        // Mock emailjs functionality since it's not available in this environment
-        console.log('Form submitted:', Object.fromEntries(new FormData(e.target)))
-        e.target.reset()
-        alert('Message sent successfully! (This is a demo)')
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent page reload
 
-        // Original code for when emailjs is available:
-        // emailjs.sendForm('service_aqzkdf8', 'template_s2srvyp', e.target, 'N871wuv_mpCTd7wBl')
-        //     .then(
-        //         () => {
-        //             e.target.reset()
-        //         },
-        //         (error) => {
-        //             console.log('FAILED...', error.text);
-        //         },
-        //     );
-    }
+        emailjs
+            .sendForm(
+                'service_aqzkdf8',
+                'template_s2srvyp',
+                e.target,
+                'N871wuv_mpCTd7wBl'
+            )
+            .then(() => {
+
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'I will get back to you soon.',
+                    confirmButtonColor: '#3085d6'
+                });
+                e.target.reset(); // Clear the form
+            })
+            .catch((error) => {
+                console.error('❌ Failed to send message:', error);
+            });
+    };
 
     return (
         <div id='contact' className='bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 px-4 relative overflow-hidden'>
@@ -123,7 +132,7 @@ const ContactSection = () => {
                                 Send a Message
                             </h3>
 
-                            <div className="space-y-6" onSubmit={handleSubmit} >
+                            <form className="space-y-6" onSubmit={handleSubmit} >
                                 {/* Name and Email Row */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
@@ -202,7 +211,6 @@ const ContactSection = () => {
                                 {/* Submit Button */}
                                 <button
                                     type='submit'
-                                    onClick={handleSubmit}
                                     className='w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3'
                                 >
                                     <span>Send Message</span>
@@ -210,7 +218,7 @@ const ContactSection = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                                     </svg>
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
