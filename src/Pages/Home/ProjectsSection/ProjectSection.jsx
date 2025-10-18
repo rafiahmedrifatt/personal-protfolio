@@ -1,8 +1,57 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 import ProjectModal from '../../../Components/Modal/ProjectModal';
 
 const ProjectSection = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        },
+        hover: {
+            scale: 1.02,
+            y: -10,
+            transition: {
+                duration: 0.3,
+                ease: "easeOut"
+            }
+        }
+    };
+
     const demoData = [
         {
             id: 1,
@@ -132,7 +181,7 @@ const ProjectSection = () => {
                 "JWT",
                 "Framer Motion",
             ],
-            live: "https://volunteer-management-project.web.app/", // Replace with real URL
+            live: "https://volunteer-management-project.web.app/",
             github: {
                 client: "https://github.com/yourusername/volunteer-client",
                 server: "https://github.com/yourusername/volunteer-server"
@@ -140,119 +189,240 @@ const ProjectSection = () => {
             details: "HelpHub is a volunteer coordination platform built to streamline how communities connect with helping hands. With JWT-secured private routes, dynamic layout switching, volunteer tracking, and request management, the app ensures both organizers and volunteers have a smooth, effective experience. Feature-rich and performance-optimized, HelpHub shines in both UX and backend logic, making it a standout project in volunteer tech."
         }
     ];
+
     return (
-        <div id='projects' className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-16">
-            <div className="max-w-7xl mx-auto p-8">
+        <motion.div
+            ref={ref}
+            id='projects'
+            className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900 py-8 sm:py-12 lg:py-16"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={containerVariants}
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Title */}
-                <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    Projects <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">I've</span> worked on
-                </h2>
+                <motion.div
+                    className="text-center mb-12 sm:mb-16 lg:mb-20"
+                    variants={itemVariants}
+                >
+                    <motion.span
+                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg border border-blue-500/30'
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        💼 My Projects
+                    </motion.span>
+                    <motion.h2
+                        className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 sm:mb-6"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                    >
+                        Projects{' '}
+                        <motion.span
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 relative"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                            transition={{ delay: 0.6, duration: 0.8 }}
+                        >
+                            I've
+                            <motion.div
+                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                                initial={{ width: 0 }}
+                                animate={isInView ? { width: "100%" } : { width: 0 }}
+                                transition={{ delay: 1, duration: 0.8 }}
+                            />
+                        </motion.span>
+                        {' '}worked on
+                    </motion.h2>
+                    <motion.p
+                        className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto"
+                        initial={{ opacity: 0 }}
+                        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ delay: 0.8, duration: 0.8 }}
+                    >
+                        Here are some of my recent projects that showcase my skills and passion for development
+                    </motion.p>
+                </motion.div>
 
                 {/* Project Cards */}
-                <div className="space-y-12">
-                    {demoData.map(singleData =>
-                        <div key={singleData.id} className=' border border-slate-200/60 rounded-2xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-blue-300/60'>
+                <div className="space-y-8 sm:space-y-12">
+                    {demoData.map((singleData, index) => (
+                        <motion.div
+                            key={singleData.id}
+                            className='border border-gray-700/50 rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-blue-500/50 group'
+                            variants={cardVariants}
+                            whileHover="hover"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                            transition={{ delay: 1.2 + index * 0.2, duration: 0.8 }}
+                        >
                             {/* Subtle gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-purple-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                             {/* Top Row: Image and Description */}
-                            <div className='grid grid-cols-1 md:grid-cols-2 relative z-10'>
-
+                            <div className='grid grid-cols-1 lg:grid-cols-2 relative z-10'>
                                 {/* Image Section */}
-                                <div className='h-90 my-auto relative overflow-hidden'>
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <img
+                                <motion.div
+                                    className='h-64 sm:h-80 lg:h-96 relative overflow-hidden'
+                                    whileHover={{ scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <motion.img
                                         src={singleData.image}
                                         alt={singleData.title}
-                                        className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                        transition={{ delay: 1.4 + index * 0.2, duration: 0.8 }}
                                     />
-                                </div>
+                                </motion.div>
+
                                 {/* Content Section */}
-                                <div className={`p-4 lg:p-8 flex flex-col justify-center `}>
-                                    <div className="space-y-3">
+                                <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+                                    <div className="space-y-4 sm:space-y-6">
                                         {/* Project Title */}
-                                        <div className="relative">
-                                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900 group-hover:text-blue-800 transition-colors duration-500 leading-tight">
+                                        <motion.div
+                                            className="relative"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                            transition={{ delay: 1.6 + index * 0.2, duration: 0.6 }}
+                                        >
+                                            <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white group-hover:text-blue-400 transition-colors duration-500 leading-tight">
                                                 {singleData.title}
                                             </h3>
-                                            <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
-                                        </div>
+                                            <div className="absolute -left-2 sm:-left-4 top-0 w-0.5 sm:w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+                                        </motion.div>
 
                                         {/* Description */}
-                                        <p className="text-slate-600 text-lg leading-relaxed">
+                                        <motion.p
+                                            className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed"
+                                            initial={{ opacity: 0 }}
+                                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                                            transition={{ delay: 1.8 + index * 0.2, duration: 0.6 }}
+                                        >
                                             {singleData.description}
-                                        </p>
+                                        </motion.p>
 
                                         {/* Technologies */}
-                                        <div>
-                                            <h4 className="text-lg font-semibold mb-2 text-slate-800 flex items-center">
-                                                <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mr-3 animate-pulse"></div>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                            transition={{ delay: 2 + index * 0.2, duration: 0.6 }}
+                                        >
+                                            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-200 flex items-center">
+                                                <motion.div
+                                                    className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mr-2 sm:mr-3"
+                                                    animate={{ scale: [1, 1.2, 1] }}
+                                                    transition={{ duration: 2, repeat: Infinity }}
+                                                />
                                                 Technologies Used
                                             </h4>
                                             <div className="flex flex-wrap gap-2">
-                                                {singleData.tech.map((singleTech, techIndex) =>
-                                                    <span
+                                                {singleData.tech.map((singleTech, techIndex) => (
+                                                    <motion.span
                                                         key={techIndex}
-                                                        className="px-3 py-1.5 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200/60 rounded-full text-sm font-medium text-slate-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
-                                                        style={{
-                                                            animationDelay: `${techIndex * 50}ms`
+                                                        className="px-2 py-1 sm:px-3 sm:py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
+                                                        initial={{ opacity: 0, scale: 0 }}
+                                                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                                                        transition={{
+                                                            delay: 2.2 + index * 0.2 + techIndex * 0.05,
+                                                            duration: 0.3
                                                         }}
+                                                        whileHover={{ scale: 1.1 }}
                                                     >
                                                         {singleTech}
-                                                    </span>
-                                                )}
+                                                    </motion.span>
+                                                ))}
                                             </div>
-                                        </div>
+                                        </motion.div>
 
                                         {/* Action Buttons */}
-                                        <div className="flex flex-wrap gap-4 pt-4">
-                                            <a
+                                        <motion.div
+                                            className="flex flex-wrap gap-3 sm:gap-4 pt-4"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                            transition={{ delay: 2.4 + index * 0.2, duration: 0.6 }}
+                                        >
+                                            <motion.a
                                                 href={singleData.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3 overflow-hidden"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    boxShadow: "0 10px 30px -5px rgba(59, 130, 246, 0.4)"
+                                                }}
+                                                whileTap={{ scale: 0.95 }}
                                             >
                                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300">
+                                                <motion.svg
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300"
+                                                >
                                                     <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                                                </svg>
+                                                </motion.svg>
                                                 <span className="relative z-10">Live Demo</span>
-                                            </a>
+                                            </motion.a>
 
-                                            <a
+                                            <motion.a
                                                 href={singleData.github.client}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3 overflow-hidden"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 text-white font-semibold rounded-xl hover:bg-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
+                                                }}
+                                                whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-slate-800 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300">
+                                                <div className="absolute inset-0 bg-gray-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <motion.svg
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300"
+                                                >
                                                     <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-                                                </svg>
+                                                </motion.svg>
                                                 <span className="relative z-10">Source Code</span>
-                                            </a>
+                                            </motion.a>
 
-                                            <button
+                                            <motion.button
                                                 onClick={() => document.getElementById(`my_modal_${singleData.id}`).showModal()}
-                                                className="group/btn relative px-3 py-2 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 flex items-center gap-3 overflow-hidden"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gray-800 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:bg-gray-700 hover:border-gray-500 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
+                                                }}
+                                                whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-slate-50 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300">
+                                                <div className="absolute inset-0 bg-gray-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <motion.svg
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300"
+                                                >
                                                     <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
-                                                </svg>
+                                                </motion.svg>
                                                 <span className="relative z-10">View Details</span>
-                                            </button>
-                                        </div>
+                                            </motion.button>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </div>
                             <ProjectModal singleData={singleData} />
-                        </div>
-                    )}
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-
-        </div>
+        </motion.div>
     );
 };
 

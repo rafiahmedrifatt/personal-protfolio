@@ -1,12 +1,10 @@
 import './App.css'
 
 function App() {
-
-
   return (
-    <>
-      <p>hello</p>
-    </>
+    <div className="App">
+      {/* App content is handled by Router */}
+    </div>
   )
 }
 
