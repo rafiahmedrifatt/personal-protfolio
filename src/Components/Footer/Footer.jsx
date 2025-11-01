@@ -9,7 +9,7 @@ const Footer = () => {
         { icon: Github, href: 'https://github.com/rafiahmedrifatt', label: 'GitHub' },
         { icon: Linkedin, href: 'https://linkedin.com/in/rafiahmedrifatt', label: 'LinkedIn' },
         { icon: Twitter, href: 'https://twitter.com/rafiahmedrifatt', label: 'Twitter' },
-        { icon: Mail, href: 'mailto:rafiahmed0471@gmail.com', label: 'Email' }
+        { icon: Mail, href: 'mailto:rafiahmedrifat1@gmail.com', label: 'Email' }
     ];
 
     const quickLinks = [
@@ -169,7 +169,7 @@ const Footer = () => {
                                 transition={{ delay: 1.4, duration: 0.6 }}
                             >
                                 <Mail className="w-4 h-4 mr-2" />
-                                rafiahmed0471@gmail.com
+                                rafiahmedrifat1@gmail.com
                             </motion.p>
                             <motion.p
                                 className="text-gray-400 text-sm sm:text-base"

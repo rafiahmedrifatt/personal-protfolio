@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
@@ -177,7 +178,7 @@ const HeroSection = () => {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 2.8, duration: 0.8 }}
                         >
-                            Always building, always learning — because <span className="italic font-medium text-purple-400">good enough is never enough.</span>
+                            Always building, always learning, because <span className="italic font-medium text-purple-400">good enough is never enough.</span>
                         </motion.p>
                     </motion.div>
 
@@ -227,7 +228,7 @@ const HeroSection = () => {
                         transition={{ delay: 3.5, duration: 0.8 }}
                     >
                         <motion.a
-                            href='https://drive.google.com/uc?export=download&id=1_oazDyk1ny93iQy4RO8UCJ3n8mU_vZKC'
+                            href='https://drive.google.com/uc?export=download&id=1RN3sJ-M8K_nr09Fr36WDSisajkBE4dYT'
                             className='inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg lg:text-xl transition-all duration-300 shadow-lg hover:shadow-xl'
                             whileHover={{
                                 scale: 1.05,
@@ -301,22 +302,6 @@ const HeroSection = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 1.5, duration: 1 }}
                             />
-
-                            {/* Animated floating accent */}
-                            <motion.div
-                                className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg"
-                                animate={{
-                                    rotate: [0, 360],
-                                    scale: [1, 1.1, 1]
-                                }}
-                                transition={{
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                            >
-                                <span className="text-white font-bold text-sm sm:text-base lg:text-xl">🚀</span>
-                            </motion.div>
                         </motion.div>
                     </motion.div>
                 </motion.div>

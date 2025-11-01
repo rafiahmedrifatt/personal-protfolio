@@ -102,7 +102,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-4">
                         {/* Resume Button - Desktop */}
                         <motion.a
-                            href='https://drive.google.com/uc?export=download&id=1_oazDyk1ny93iQy4RO8UCJ3n8mU_vZKC'
+                            href='https://drive.google.com/uc?export=download&id=1RN3sJ-M8K_nr09Fr36WDSisajkBE4dYT'
                             className="hidden lg:inline-flex items-center px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
                             whileHover={{
                                 scale: 1.05,
