@@ -50,6 +50,8 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             variants={navVariants}
+            role="navigation"
+            aria-label="Main navigation"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 sm:h-20">
@@ -71,7 +73,7 @@ const Navbar = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex lg:items-center lg:space-x-8">
-                        <ul className="flex items-center space-x-1">
+                        <ul className="flex items-center space-x-1" role="menubar">
                             {link.map((singleLink, index) =>
                                 <motion.li
                                     key={singleLink.to}
@@ -112,6 +114,8 @@ const Navbar = () => {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.6, duration: 0.6 }}
+                            aria-label="Download my resume"
+                            title="Download Resume"
                         >
                             <span className="relative z-10">Resume</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>

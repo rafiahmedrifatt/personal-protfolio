@@ -49,11 +49,12 @@ const HeroSection = () => {
     };
 
     return (
-        <motion.div
+        <motion.section
             className='min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-blue-900 relative overflow-hidden'
             initial="hidden"
             animate="visible"
             variants={containerVariants}
+            aria-label="Hero section introducing Rafi Ahmed Rifat"
         >
             {/* Animated Background Elements */}
             <motion.div
@@ -84,7 +85,7 @@ const HeroSection = () => {
             <div className='flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 w-full max-w-7xl mx-auto relative z-10 min-h-screen'>
 
                 {/* Left Content */}
-                <motion.div
+                <motion.article
                     className='lg:w-2/3 space-y-6 sm:space-y-8 text-left'
                     variants={itemVariants}
                 >
@@ -249,10 +250,10 @@ const HeroSection = () => {
                             </motion.svg>
                         </motion.a>
                     </motion.div>
-                </motion.div>
+                </motion.article>
 
                 {/* Animated Image Section */}
-                <motion.div
+                <motion.figure
                     className='lg:w-1/3 mt-8 sm:mt-12 lg:mt-0 flex justify-center'
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -296,17 +297,19 @@ const HeroSection = () => {
                         >
                             <motion.img
                                 src="/profilePhoto.jpg"
-                                alt="Rafi Ahmed Rifat"
+                                alt="Rafi Ahmed Rifat - Full Stack Developer"
                                 className='relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-2xl sm:rounded-3xl shadow-2xl border-4 border-gray-700/50'
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 1.5, duration: 1 }}
+                                loading="eager"
+                                decoding="async"
                             />
                         </motion.div>
                     </motion.div>
-                </motion.div>
+                </motion.figure>
             </div>
-        </motion.div>
+        </motion.section>
     );
 };
 
