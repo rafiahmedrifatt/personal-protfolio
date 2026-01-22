@@ -194,7 +194,7 @@ const ProjectSection = () => {
         <motion.div
             ref={ref}
             id='projects'
-            className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900 py-8 sm:py-12 lg:py-16"
+            className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-900 py-8 sm:py-12 lg:py-16"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={containerVariants}
@@ -206,7 +206,7 @@ const ProjectSection = () => {
                     variants={itemVariants}
                 >
                     <motion.span
-                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg border border-blue-500/30'
+                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg border border-cyan-500/30'
                         whileHover={{ scale: 1.05 }}
                     >
                         💼 My Projects
@@ -219,14 +219,14 @@ const ProjectSection = () => {
                     >
                         Projects{' '}
                         <motion.span
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 relative"
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-500 relative"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
                         >
                             I've
                             <motion.div
-                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-green-500 rounded-full"
                                 initial={{ width: 0 }}
                                 animate={isInView ? { width: "100%" } : { width: 0 }}
                                 transition={{ delay: 1, duration: 0.8 }}
@@ -235,7 +235,7 @@ const ProjectSection = () => {
                         {' '}worked on
                     </motion.h2>
                     <motion.p
-                        className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto"
+                        className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
@@ -249,7 +249,7 @@ const ProjectSection = () => {
                     {demoData.map((singleData, index) => (
                         <motion.div
                             key={singleData.id}
-                            className='border border-gray-700/50 rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-blue-500/50 group'
+                            className='border border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-cyan-500/50 group'
                             variants={cardVariants}
                             whileHover="hover"
                             initial={{ opacity: 0, y: 50 }}
@@ -257,7 +257,7 @@ const ProjectSection = () => {
                             transition={{ delay: 1.2 + index * 0.2, duration: 0.8 }}
                         >
                             {/* Subtle gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                             {/* Top Row: Image and Description */}
                             <div className='grid grid-cols-1 lg:grid-cols-2 relative z-10'>
@@ -267,7 +267,7 @@ const ProjectSection = () => {
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-cyan-600/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <motion.img
                                         src={singleData.image}
                                         alt={singleData.title}
@@ -288,15 +288,17 @@ const ProjectSection = () => {
                                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                             transition={{ delay: 1.6 + index * 0.2, duration: 0.6 }}
                                         >
-                                            <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white group-hover:text-blue-400 transition-colors duration-500 leading-tight">
+                                            <h3
+                                                className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white group-hover:text-cyan-400 transition-colors duration-500 leading-tight"
+                                            >
                                                 {singleData.title}
                                             </h3>
-                                            <div className="absolute -left-2 sm:-left-4 top-0 w-0.5 sm:w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+                                            <div className="absolute -left-2 sm:-left-4 top-0 w-0.5 sm:w-1 h-full bg-gradient-to-b from-cyan-500 to-green-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
                                         </motion.div>
 
                                         {/* Description */}
                                         <motion.p
-                                            className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed"
+                                            className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed"
                                             initial={{ opacity: 0 }}
                                             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                             transition={{ delay: 1.8 + index * 0.2, duration: 0.6 }}
@@ -310,9 +312,9 @@ const ProjectSection = () => {
                                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                             transition={{ delay: 2 + index * 0.2, duration: 0.6 }}
                                         >
-                                            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-200 flex items-center">
+                                            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-slate-200 flex items-center">
                                                 <motion.div
-                                                    className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mr-2 sm:mr-3"
+                                                    className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full mr-2 sm:mr-3"
                                                     animate={{ scale: [1, 1.2, 1] }}
                                                     transition={{ duration: 2, repeat: Infinity }}
                                                 />
@@ -322,7 +324,7 @@ const ProjectSection = () => {
                                                 {singleData.tech.map((singleTech, techIndex) => (
                                                     <motion.span
                                                         key={techIndex}
-                                                        className="px-2 py-1 sm:px-3 sm:py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
+                                                        className="px-2 py-1 sm:px-3 sm:py-1.5 bg-slate-700/50 border border-slate-600/50 rounded-full text-xs sm:text-sm font-medium text-slate-300 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-green-500 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
                                                         initial={{ opacity: 0, scale: 0 }}
                                                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                                                         transition={{
@@ -348,14 +350,14 @@ const ProjectSection = () => {
                                                 href={singleData.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-cyan-600 to-green-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
                                                 whileHover={{
                                                     scale: 1.05,
-                                                    boxShadow: "0 10px 30px -5px rgba(59, 130, 246, 0.4)"
+                                                    boxShadow: "0 10px 30px -5px rgba(34, 211, 238, 0.4)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-700 to-green-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"
@@ -372,14 +374,14 @@ const ProjectSection = () => {
                                                 href={singleData.github.client}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 text-white font-semibold rounded-xl hover:bg-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-slate-700 text-white font-semibold rounded-xl hover:bg-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
                                                 whileHover={{
                                                     scale: 1.05,
                                                     boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-gray-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 bg-slate-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"
@@ -394,14 +396,14 @@ const ProjectSection = () => {
 
                                             <motion.button
                                                 onClick={() => document.getElementById(`my_modal_${singleData.id}`).showModal()}
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gray-800 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:bg-gray-700 hover:border-gray-500 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-slate-800 border-2 border-slate-600 text-slate-300 font-semibold rounded-xl hover:bg-slate-700 hover:border-slate-500 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
                                                 whileHover={{
                                                     scale: 1.05,
                                                     boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-gray-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 bg-slate-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"
@@ -422,7 +424,7 @@ const ProjectSection = () => {
                     ))}
                 </div>
             </div>
-        </motion.div>
+        </motion.div >
     );
 };
 

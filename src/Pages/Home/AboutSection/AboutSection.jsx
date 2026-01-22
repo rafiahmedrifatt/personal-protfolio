@@ -74,14 +74,14 @@ const AboutSection = () => {
         <motion.div
             ref={ref}
             id='about'
-            className='min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-blue-900 py-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden'
+            className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-900 py-8 px-4 sm:px-6 lg:px-12 relative overflow-hidden'
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={containerVariants}
         >
             {/* Animated Background Elements */}
             <motion.div
-                className="absolute top-20 left-10 sm:left-20 w-32 h-32 sm:w-64 sm:h-64 bg-blue-500/10 rounded-full blur-3xl"
+                className="absolute top-20 left-10 sm:left-20 w-32 h-32 sm:w-64 sm:h-64 bg-cyan-500/10 rounded-full blur-3xl"
                 animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.1, 0.2, 0.1]
@@ -93,7 +93,7 @@ const AboutSection = () => {
                 }}
             />
             <motion.div
-                className="absolute bottom-20 right-10 sm:right-20 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/10 rounded-full blur-3xl"
+                className="absolute bottom-20 right-10 sm:right-20 w-40 h-40 sm:w-80 sm:h-80 bg-green-500/10 rounded-full blur-3xl"
                 animate={{
                     scale: [1.3, 1, 1.3],
                     opacity: [0.1, 0.2, 0.1]
@@ -112,7 +112,7 @@ const AboutSection = () => {
                     variants={itemVariants}
                 >
                     <motion.span
-                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-8 shadow-lg border border-blue-500/30'
+                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-8 shadow-lg border border-cyan-500/30'
                         whileHover={{ scale: 1.05 }}
                     >
                         🚀 Get to know me
@@ -125,14 +125,14 @@ const AboutSection = () => {
                     >
                         About{' '}
                         <motion.span
-                            className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 relative'
+                            className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-500 relative'
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
                         >
                             Me
                             <motion.div
-                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-green-500 rounded-full"
                                 initial={{ width: 0 }}
                                 animate={isInView ? { width: "100%" } : { width: 0 }}
                                 transition={{ delay: 1, duration: 0.8 }}
@@ -150,7 +150,7 @@ const AboutSection = () => {
                     >
                         {/* About Text Cards */}
                         <motion.div
-                            className='bg-gray-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700/50'
+                            className='bg-slate-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-slate-700/50'
                             variants={cardVariants}
                             whileHover="hover"
                         >
@@ -161,7 +161,7 @@ const AboutSection = () => {
                                 transition={{ delay: 0.8, duration: 0.6 }}
                             >
                                 <motion.div
-                                    className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-lg border border-blue-500/30"
+                                    className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-lg border border-cyan-500/30"
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.6 }}
                                 >
@@ -170,17 +170,17 @@ const AboutSection = () => {
                                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">My Journey</h3>
                             </motion.div>
                             <motion.p
-                                className='text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed'
+                                className='text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed'
                                 initial={{ opacity: 0 }}
                                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                 transition={{ delay: 1, duration: 0.8 }}
                             >
-                                I'm Rafi, a <span className="font-semibold text-blue-400">MERN Stack Developer</span> passionate about building modern, fast, and responsive web applications. My journey into programming started with curiosity — but quickly evolved into a full-on commitment to mastering the JavaScript ecosystem, especially React and backend technologies like MongoDB and Node.js.
+                                I'm Rafi, a <span className="font-semibold text-cyan-400">MERN Stack Developer</span> passionate about building modern, fast, and responsive web applications. My journey into programming started with curiosity — but quickly evolved into a full-on commitment to mastering the JavaScript ecosystem, especially React and backend technologies like MongoDB and Node.js.
                             </motion.p>
                         </motion.div>
 
                         <motion.div
-                            className='bg-gray-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700/50'
+                            className='bg-slate-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-slate-700/50'
                             variants={cardVariants}
                             whileHover="hover"
                         >
@@ -191,7 +191,7 @@ const AboutSection = () => {
                                 transition={{ delay: 1.2, duration: 0.6 }}
                             >
                                 <motion.div
-                                    className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-lg border border-purple-500/30"
+                                    className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-lg border border-green-500/30"
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.6 }}
                                 >
@@ -200,12 +200,12 @@ const AboutSection = () => {
                                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">Beyond Code</h3>
                             </motion.div>
                             <motion.p
-                                className='text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed'
+                                className='text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed'
                                 initial={{ opacity: 0 }}
                                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                 transition={{ delay: 1.4, duration: 0.8 }}
                             >
-                                Outside of programming, I'm someone who enjoys <span className="font-semibold text-purple-400">Working Out</span>, <span className="font-semibold text-blue-400">Entrepreneurship</span>, and especially <span className="font-semibold text-green-400">Traveling</span>. Exploring new places helps me reset, gain fresh perspectives, and even sparks creative ideas for projects. Whether it's a short local trip or a long journey, I believe travel fuels personal growth and broadens how I see both people and technology.
+                                Outside of programming, I'm someone who enjoys <span className="font-semibold text-green-400">Working Out</span>, <span className="font-semibold text-cyan-400">Entrepreneurship</span>, and especially <span className="font-semibold text-green-400">Traveling</span>. Exploring new places helps me reset, gain fresh perspectives, and even sparks creative ideas for projects. Whether it's a short local trip or a long journey, I believe travel fuels personal growth and broadens how I see both people and technology.
                             </motion.p>
                         </motion.div>
                     </motion.div>
@@ -217,7 +217,7 @@ const AboutSection = () => {
                     >
                         {/* Skills Section */}
                         <motion.div
-                            className='bg-gray-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700/50'
+                            className='bg-slate-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-slate-700/50'
                             variants={cardVariants}
                             whileHover="hover"
                         >
@@ -267,7 +267,7 @@ const AboutSection = () => {
 
                         {/* Interests Section */}
                         <motion.div
-                            className='bg-gray-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700/50'
+                            className='bg-slate-800/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-slate-700/50'
                             variants={cardVariants}
                             whileHover="hover"
                         >
@@ -311,7 +311,7 @@ const AboutSection = () => {
                                         >
                                             {interest.icon}
                                         </motion.span>
-                                        <span className="font-bold text-gray-200 text-base sm:text-lg lg:text-xl">{interest.name}</span>
+                                        <span className="font-bold text-slate-200 text-base sm:text-lg lg:text-xl">{interest.name}</span>
                                     </motion.div>
                                 ))}
                             </div>

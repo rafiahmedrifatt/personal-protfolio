@@ -10,7 +10,7 @@ const ContactSection = lazy(() => import('../ContactSection/ContactSection'));
 const Footer = lazy(() => import('../../../Components/Footer/Footer'));
 
 // Loading component
-const SectionLoader = () => <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800"><div className="animate-pulse">Loading...</div></div>;
+const SectionLoader = () => <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800"><div className="animate-pulse">Loading...</div></div>;
 
 const Home = () => {
     // SEO Optimization

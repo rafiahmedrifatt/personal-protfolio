@@ -2,22 +2,22 @@
 
 @import "tailwindcss";
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar for Modern Tech theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: #020617;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4b5563;
+  background: #38bdf8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
+  background: #22c55e;
 }
 
 /* Smooth scrolling */
@@ -34,8 +34,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #111827;
-  color: #f9fafb;
+  background-color: #0f172a;
+  color: #e5e7eb;
   overflow-x: hidden;
 }
 
@@ -129,7 +129,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,16 +137,16 @@ body {
 
 /* Custom focus styles */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #38bdf8;
+  color: #020617;
 }
 
 ::-moz-selection {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #38bdf8;
+  color: #020617;
 }

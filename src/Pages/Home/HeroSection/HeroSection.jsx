@@ -50,7 +50,7 @@ const HeroSection = () => {
 
     return (
         <motion.section
-            className='min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-blue-900 relative overflow-hidden'
+            className='min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-950 relative overflow-hidden'
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -58,7 +58,7 @@ const HeroSection = () => {
         >
             {/* Animated Background Elements */}
             <motion.div
-                className="absolute top-10 sm:top-20 right-10 sm:right-20 w-32 h-32 sm:w-64 sm:h-64 bg-blue-500/10 rounded-full blur-3xl"
+                className="absolute top-10 sm:top-20 right-10 sm:right-20 w-32 h-32 sm:w-64 sm:h-64 bg-cyan-400/10 rounded-full blur-3xl"
                 animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.1, 0.2, 0.1]
@@ -70,7 +70,7 @@ const HeroSection = () => {
                 }}
             />
             <motion.div
-                className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/10 rounded-full blur-3xl"
+                className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-40 h-40 sm:w-80 sm:h-80 bg-green-500/10 rounded-full blur-3xl"
                 animate={{
                     scale: [1.2, 1, 1.2],
                     opacity: [0.1, 0.2, 0.1]
@@ -92,14 +92,14 @@ const HeroSection = () => {
                     {/* Greeting with animated badge */}
                     <motion.div variants={itemVariants}>
                         <motion.span
-                            className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 shadow-lg border border-blue-500/30'
+                            className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-400/20 to-green-500/20 text-cyan-300 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 shadow-lg border border-cyan-400/30'
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             👋 Hello there!
                         </motion.span>
                         <motion.p
-                            className='text-lg sm:text-xl lg:text-2xl text-gray-300 font-light'
+                            className='text-lg sm:text-xl lg:text-2xl text-slate-300 font-light'
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
@@ -114,7 +114,7 @@ const HeroSection = () => {
                         variants={itemVariants}
                     >
                         <motion.span
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-400 to-purple-400"
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 to-green-500"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 1 }}
@@ -122,14 +122,14 @@ const HeroSection = () => {
                             Rafi Ahmed
                         </motion.span>{' '}
                         <motion.span
-                            className='text-blue-400 relative'
+                            className='text-cyan-400 relative'
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
                         >
                             Rifat
                             <motion.div
-                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-green-500 rounded-full"
                                 initial={{ width: 0 }}
                                 animate={{ width: "100%" }}
                                 transition={{ delay: 1.8, duration: 0.8 }}
@@ -139,7 +139,7 @@ const HeroSection = () => {
 
                     {/* Animated tagline */}
                     <motion.h2
-                        className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-200'
+                        className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-slate-100'
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.5, duration: 0.8 }}
@@ -155,7 +155,7 @@ const HeroSection = () => {
 
                     {/* Animated Description Card */}
                     <motion.div
-                        className='max-w-2xl bg-gray-800/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700/50'
+                        className='max-w-2xl bg-slate-800/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-slate-700/50'
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 2.2, duration: 0.8 }}
@@ -165,21 +165,21 @@ const HeroSection = () => {
                         }}
                     >
                         <motion.p
-                            className='text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed'
+                            className='text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 2.5, duration: 0.8 }}
                         >
-                            I'm a <span className="font-semibold text-blue-400">MERN stack developer</span> fueled by curiosity and a passion for clean, purposeful code.
+                            I'm a <span className="font-semibold text-cyan-400">MERN stack developer</span> fueled by curiosity and a passion for clean, purposeful code.
                             I love crafting fast, responsive web apps that solve real problems and leave a lasting impact.
                         </motion.p>
                         <motion.p
-                            className='text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mt-3 sm:mt-4'
+                            className='text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed mt-3 sm:mt-4'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 2.8, duration: 0.8 }}
                         >
-                            Always building, always learning, because <span className="italic font-medium text-purple-400">good enough is never enough.</span>
+                            Always building, always learning, because <span className="italic font-medium text-green-500">good enough is never enough.</span>
                         </motion.p>
                     </motion.div>
 
@@ -199,7 +199,7 @@ const HeroSection = () => {
                                 key={social.icon}
                                 href={social.href}
                                 target='_blank'
-                                className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-gray-800/80 border-2 border-gray-600/50 text-gray-300 hover:border-${social.color}-400 hover:bg-${social.color}-500 hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl backdrop-blur-sm`}
+                                className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-slate-800/80 border-2 border-slate-600/50 text-slate-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl backdrop-blur-sm`}
                                 variants={socialVariants}
                                 whileHover="hover"
                                 initial={{ opacity: 0, scale: 0 }}
@@ -230,10 +230,10 @@ const HeroSection = () => {
                     >
                         <motion.a
                             href='https://drive.google.com/uc?export=download&id=1RN3sJ-M8K_nr09Fr36WDSisajkBE4dYT'
-                            className='inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg lg:text-xl transition-all duration-300 shadow-lg hover:shadow-xl'
+                            className='inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg lg:text-xl transition-all duration-300 shadow-lg hover:shadow-xl'
                             whileHover={{
                                 scale: 1.05,
-                                boxShadow: "0 20px 40px -12px rgba(59, 130, 246, 0.5)"
+                                boxShadow: "0 20px 40px -12px rgba(56, 189, 248, 0.5)"
                             }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -266,7 +266,7 @@ const HeroSection = () => {
                     >
                         {/* Animated layered backgrounds */}
                         <motion.div
-                            className='absolute -inset-4 sm:-inset-6 lg:-inset-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl sm:rounded-3xl opacity-20 blur-2xl'
+                            className='absolute -inset-4 sm:-inset-6 lg:-inset-8 bg-gradient-to-r from-cyan-400/20 to-green-500/20 rounded-2xl sm:rounded-3xl opacity-20 blur-2xl'
                             animate={{
                                 scale: [1, 1.1, 1],
                                 opacity: [0.2, 0.3, 0.2]
@@ -278,7 +278,7 @@ const HeroSection = () => {
                             }}
                         />
                         <motion.div
-                            className='absolute -inset-2 sm:-inset-3 lg:-inset-4 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-xl sm:rounded-2xl opacity-30'
+                            className='absolute -inset-2 sm:-inset-3 lg:-inset-4 bg-gradient-to-r from-cyan-400/30 to-green-500/30 rounded-xl sm:rounded-2xl opacity-30'
                             animate={{
                                 rotate: [0, 5, -5, 0]
                             }}

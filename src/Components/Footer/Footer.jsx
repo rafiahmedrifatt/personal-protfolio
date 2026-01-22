@@ -64,7 +64,7 @@ const Footer = () => {
 
     return (
         <motion.footer
-            className="bg-gray-900 text-white"
+            className="bg-slate-900 text-white"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -81,7 +81,7 @@ const Footer = () => {
                         variants={itemVariants}
                     >
                         <motion.h3
-                            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-green-500 bg-clip-text text-transparent"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
@@ -89,7 +89,7 @@ const Footer = () => {
                             Rafi Ahmed Rifat
                         </motion.h3>
                         <motion.p
-                            className="text-gray-400 leading-relaxed text-sm sm:text-base"
+                            className="text-slate-400 leading-relaxed text-sm sm:text-base"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
@@ -104,7 +104,7 @@ const Footer = () => {
                                     <motion.a
                                         key={index}
                                         href={social.href}
-                                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 group border border-gray-700 hover:border-blue-500"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition-colors duration-300 group border border-slate-700 hover:border-cyan-400"
                                         aria-label={social.label}
                                         variants={socialVariants}
                                         whileHover="hover"
@@ -137,7 +137,7 @@ const Footer = () => {
                                 <motion.a
                                     key={index}
                                     href={link.href}
-                                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group text-sm sm:text-base"
+                                    className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center group text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
@@ -165,7 +165,7 @@ const Footer = () => {
                         </motion.h4>
                         <div className="space-y-3 sm:space-y-4">
                             <motion.p
-                                className="text-gray-400 flex items-center text-sm sm:text-base"
+                                className="text-slate-400 flex items-center text-sm sm:text-base"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 1.4, duration: 0.6 }}
@@ -174,7 +174,7 @@ const Footer = () => {
                                 rafiahmedrifat1@gmail.com
                             </motion.p>
                             <motion.p
-                                className="text-gray-400 text-sm sm:text-base"
+                                className="text-slate-400 text-sm sm:text-base"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 1.6, duration: 0.6 }}
@@ -183,13 +183,13 @@ const Footer = () => {
                             </motion.p>
                             <motion.a
                                 href="#contact"
-                                className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 group text-sm sm:text-base font-semibold"
+                                className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500 to-green-500 text-white rounded-lg hover:from-cyan-600 hover:to-green-600 transition-all duration-300 group text-sm sm:text-base font-semibold"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 1.8, duration: 0.6 }}
                                 whileHover={{
                                     scale: 1.05,
-                                    boxShadow: "0 10px 30px -5px rgba(59, 130, 246, 0.4)"
+                                    boxShadow: "0 10px 30px -5px rgba(56, 189, 248, 0.4)"
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -202,11 +202,11 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-800">
+            <div className="border-t border-slate-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0">
                         <motion.p
-                            className="text-gray-400 text-xs sm:text-sm"
+                            className="text-slate-400 text-xs sm:text-sm"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2, duration: 0.6 }}
@@ -214,7 +214,7 @@ const Footer = () => {
                             © {currentYear} Rafi Ahmed Rifat. All rights reserved.
                         </motion.p>
                         <motion.p
-                            className="text-gray-400 text-xs sm:text-sm flex items-center"
+                            className="text-slate-400 text-xs sm:text-sm flex items-center"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2.2, duration: 0.6 }}

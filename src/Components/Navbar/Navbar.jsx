@@ -46,7 +46,7 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-700/50 transition-all duration-300"
+            className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-700/50 transition-all duration-300"
             initial="hidden"
             animate="visible"
             variants={navVariants}
@@ -67,7 +67,7 @@ const Navbar = () => {
                                 alt="Logo"
                                 className="bg-transparent w-24 h-16 sm:w-28 sm:h-18 lg:w-32 lg:h-20 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-green-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </motion.div>
                     </div>
 
@@ -89,11 +89,11 @@ const Navbar = () => {
                                         smooth={true}
                                         duration={500}
                                         offset={-80}
-                                        className="inline-flex items-center gap-2 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm font-semibold text-gray-300 hover:text-blue-400 transition-all duration-300 mr-4 sm:mr-6 relative overflow-hidden group cursor-pointer"
+                                        className="inline-flex items-center gap-2 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-all duration-300 mr-4 sm:mr-6 relative overflow-hidden group cursor-pointer"
                                     >
                                         <span className="relative z-10">{singleLink.display}</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                                        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-green-500/10 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                                     </Link>
                                 </motion.li>
                             )}
@@ -105,10 +105,10 @@ const Navbar = () => {
                         {/* Resume Button - Desktop */}
                         <motion.a
                             href='https://drive.google.com/uc?export=download&id=1RN3sJ-M8K_nr09Fr36WDSisajkBE4dYT'
-                            className="hidden lg:inline-flex items-center px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+                            className="hidden lg:inline-flex items-center px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
                             whileHover={{
                                 scale: 1.05,
-                                boxShadow: "0 10px 30px -5px rgba(59, 130, 246, 0.4)"
+                                boxShadow: "0 10px 30px -5px rgba(56, 189, 248, 0.4)"
                             }}
                             whileTap={{ scale: 0.95 }}
                             initial={{ opacity: 0, x: 20 }}
@@ -118,21 +118,21 @@ const Navbar = () => {
                             title="Download Resume"
                         >
                             <span className="relative z-10">Resume</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                             <div className="absolute inset-0 bg-white/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom"></div>
                         </motion.a>
 
                         {/* Mobile Menu */}
                         <div className="lg:hidden">
                             <Menu>
-                                <MenuButton className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 border border-gray-600 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                                <MenuButton className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 border border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/20">
                                     <motion.svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         strokeWidth={1.5}
                                         stroke="currentColor"
-                                        className="size-5 sm:size-6 text-gray-300 transition-transform duration-300"
+                                        className="size-5 sm:size-6 text-slate-300 transition-transform duration-300"
                                         whileHover={{ rotate: 90 }}
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
@@ -142,7 +142,7 @@ const Navbar = () => {
                                 <MenuItems
                                     transition
                                     anchor="bottom end"
-                                    className="w-48 sm:w-56 origin-top-right rounded-xl border border-gray-700 bg-gray-800/95 backdrop-blur-md p-2 text-sm shadow-xl transition duration-200 ease-out [--anchor-gap:--spacing(1)] focus:outline-none z-50 data-closed:scale-95 data-closed:opacity-0"
+                                    className="w-48 sm:w-56 origin-top-right rounded-xl border border-slate-700 bg-slate-800/95 backdrop-blur-md p-2 text-sm shadow-xl transition duration-200 ease-out [--anchor-gap:--spacing(1)] focus:outline-none z-50 data-closed:scale-95 data-closed:opacity-0"
                                 >
                                     {link.map((singleLink, index) =>
                                         <MenuItem key={singleLink.to} className="mb-1 last:mb-0">
@@ -156,7 +156,7 @@ const Navbar = () => {
                                                     smooth={true}
                                                     duration={500}
                                                     offset={-80}
-                                                    className="group flex w-full items-center gap-3 rounded-lg px-3 py-3 text-gray-300 hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 transition-all duration-300 cursor-pointer relative overflow-hidden"
+                                                    className="group flex w-full items-center gap-3 rounded-lg px-3 py-3 text-slate-300 hover:text-cyan-400 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-green-500/10 transition-all duration-300 cursor-pointer relative overflow-hidden"
                                                 >
                                                     <motion.div
                                                         className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-0 group-hover:scale-100"
