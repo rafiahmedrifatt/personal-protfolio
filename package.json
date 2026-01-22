@@ -41,7 +41,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
-    "@vitejs/plugin-compression": "^0.5.1",
+    "vite-plugin-compression": "^0.5.1",
     "daisyui": "^5.0.43",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
