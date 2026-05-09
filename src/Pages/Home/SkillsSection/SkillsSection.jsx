@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { theme } from '../../../theme';
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 28 },
@@ -32,18 +33,10 @@ const hoverLift = {
     }
 };
 
-const stats = [
-    { label: 'Projects shipped', value: '12+', detail: 'Production deployments spanning dashboards, marketplaces, and internal tools.' },
-    { label: 'Main stack', value: 'MERN', detail: 'React + Node.js with TypeScript, MongoDB, and opinionated tooling.' },
-    { label: 'Frontend focus', value: 'UX first', detail: 'Motion, accessibility, and performance baked into component systems.' }
-];
-
 const skillPillars = [
     {
         title: 'Frontend Experience',
         emoji: '🎨',
-        bg: 'rgba(124,58,237,0.12)',
-        border: 'rgba(124,58,237,0.25)',
         description: 'Building responsive interfaces that feel polished, accessible, and resilient across devices.',
         highlights: [
             'React & modern hooks architecture',
@@ -55,8 +48,6 @@ const skillPillars = [
     {
         title: 'Backend & Data',
         emoji: '🛠️',
-        bg: 'rgba(99,102,241,0.12)',
-        border: 'rgba(99,102,241,0.25)',
         description: 'Stable APIs, clean data models, and real-world auth flows that scale with product needs.',
         highlights: [
             'RESTful APIs in Node.js & Express',
@@ -68,8 +59,6 @@ const skillPillars = [
     {
         title: 'Product Delivery',
         emoji: '🚀',
-        bg: 'rgba(79,70,229,0.12)',
-        border: 'rgba(79,70,229,0.25)',
         description: 'Shaping roadmaps, unblocking teams, and shipping iteratively with clear documentation.',
         highlights: [
             'TypeScript-first workflow',
@@ -86,210 +75,131 @@ const toolbox = [
     'Firebase Auth', 'Postman', 'PNPM / NPM', 'GitHub Actions'
 ];
 
-const growthAreas = [
-    {
-        title: 'Testing depth',
-        detail: 'Expanding coverage with component harnesses and contract tests for API consumers.'
-    },
-    {
-        title: 'Edge runtimes',
-        detail: 'Exploring serverless patterns for latency-sensitive features and personalization.'
-    }
-];
-
 const SkillsSection = () => {
     return (
         <motion.section
             id='skills'
-            className="min-h-screen py-14 sm:py-16 lg:py-20 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #0C0C1D 0%, #050508 50%, #0F0A1E 100%)' }}
+            className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+            style={{ background: theme.bg.page }}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={sectionVariants}
         >
             {/* Glow orbs */}
-            <div
-                className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }}
-            />
-            <div
-                className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }}
-            />
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div style={{
+                    position: 'absolute', top: '20%', left: '-10%', width: '500px', height: '500px',
+                    background: theme.gradient.glow1, filter: 'blur(80px)'
+                }} />
+                <div style={{
+                    position: 'absolute', bottom: '10%', right: '-5%', width: '600px', height: '600px',
+                    background: theme.gradient.glow2, filter: 'blur(80px)'
+                }} />
+            </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 relative z-10">
+            <div className="relative z-10 max-w-7xl mx-auto space-y-16 sm:space-y-20">
 
                 {/* Header */}
-                <motion.div className="text-center space-y-4" variants={cardVariants}>
-                    <span
-                        className='inline-block px-6 py-3 rounded-full text-sm font-medium shadow-lg'
-                        style={{
-                            background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15))',
-                            border: '1px solid rgba(139,92,246,0.35)',
-                            color: '#C4B5FD',
-                            boxShadow: '0 0 20px rgba(124,58,237,0.15)'
+                <motion.div className="flex flex-col items-center text-center space-y-4" variants={cardVariants}>
+                    <span 
+                        className="text-sm font-bold tracking-[0.2em] uppercase mb-2 px-4 py-1.5 rounded-full"
+                        style={{ 
+                            color: theme.color.primary2, 
+                            background: theme.gradient.badge,
+                            border: `1px solid ${theme.border.subtle}`
                         }}
                     >
-                        🧰 Skillset Overview
+                        Skillset Overview
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                        Crafting full-stack experiences end to end
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        <span style={{ color: theme.text.high }}>Crafting full-stack </span>
+                        <span style={{ 
+                            background: theme.gradient.text,
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            color: 'transparent'
+                        }}>experiences</span>
                     </h2>
-                    <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#94A3B8' }}>
+                    <p className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto font-light leading-relaxed" style={{ color: theme.text.low }}>
                         I blend expressive UI engineering with pragmatic backend development so ideas move from concept to production quickly.
                     </p>
                 </motion.div>
 
-                {/* Stats */}
-                <motion.div className="grid gap-6 sm:gap-8 md:grid-cols-3" variants={listVariants}>
-                    {stats.map((item) => (
+                {/* Skill Pillars Grid */}
+                <motion.div className="grid lg:grid-cols-3 gap-8 lg:gap-10" variants={listVariants}>
+                    {skillPillars.map((pillar) => (
                         <motion.div
-                            key={item.label}
-                            className="rounded-3xl p-6 sm:p-7 shadow-xl text-left space-y-3"
+                            key={pillar.title}
+                            className="rounded-3xl p-8 backdrop-blur-md relative overflow-hidden group flex flex-col h-full"
                             style={{
-                                background: 'rgba(15, 10, 30, 0.8)',
-                                border: '1px solid rgba(139,92,246,0.2)',
-                                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+                                background: theme.bg.surface,
+                                border: `1px solid ${theme.border.default}`,
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
                             }}
                             variants={cardVariants}
                             {...hoverLift}
                         >
-                            <p className="text-3xl font-black text-white">{item.value}</p>
-                            <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: '#C4B5FD' }}>{item.label}</p>
-                            <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{item.detail}</p>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                            {/* Subtle decorative gradient in background of card */}
+                            <div className="absolute top-0 right-0 w-32 h-32 opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-bl-full pointer-events-none"
+                                 style={{ background: `linear-gradient(to bottom left, ${theme.color.primary}, transparent)` }} />
 
-                <div className="grid gap-10 lg:grid-cols-[3fr_2fr] lg:gap-12">
-
-                    {/* Skill Pillars */}
-                    <motion.div className="space-y-8" variants={listVariants}>
-                        {skillPillars.map((pillar) => (
-                            <motion.div
-                                key={pillar.title}
-                                className="rounded-3xl p-6 sm:p-8 shadow-2xl"
-                                style={{
-                                    background: pillar.bg,
-                                    border: `1px solid ${pillar.border}`
-                                }}
-                                variants={cardVariants}
-                                {...hoverLift}
-                            >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className="text-3xl">{pillar.emoji}</span>
-                                    <h3 className="text-2xl font-bold text-white">{pillar.title}</h3>
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-14 h-14 rounded-full flex items-center justify-center text-3xl flex-shrink-0"
+                                        style={{ background: theme.gradient.card, border: `1px solid ${theme.border.subtle}` }}>
+                                        {pillar.emoji}
+                                    </div>
+                                    <h3 className="text-2xl font-bold" style={{ color: theme.text.high }}>{pillar.title}</h3>
                                 </div>
-                                <p className="text-sm sm:text-base leading-relaxed mb-5" style={{ color: '#E2E8F0' }}>
+                                <p className="text-base leading-relaxed mb-8 font-light flex-grow" style={{ color: theme.text.mid }}>
                                     {pillar.description}
                                 </p>
                                 <div className="space-y-3">
                                     {pillar.highlights.map((highlight) => (
                                         <motion.div
                                             key={highlight}
-                                            className="flex items-start gap-3 rounded-2xl px-4 py-3"
+                                            className="flex items-start gap-3 rounded-2xl px-4 py-3.5"
                                             style={{
-                                                background: 'rgba(5,5,8,0.6)',
-                                                border: '1px solid rgba(139,92,246,0.15)'
+                                                background: 'rgba(15, 10, 30, 0.5)',
+                                                border: `1px solid ${theme.border.subtle}`
                                             }}
-                                            whileHover={{ scale: 1.02, x: 4, transition: { duration: 0.2 } }}
+                                            whileHover={{ scale: 1.02, backgroundColor: 'rgba(15, 10, 30, 0.8)', transition: { duration: 0.2 } }}
                                         >
-                                            <span className="mt-1 h-2 w-2 rounded-full flex-shrink-0" style={{ background: '#8B5CF6' }} />
-                                            <span className="text-sm leading-relaxed" style={{ color: '#E2E8F0' }}>
+                                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 shadow-[0_0_8px_rgba(139,92,246,0.8)]" style={{ background: theme.color.primary }} />
+                                            <span className="text-sm font-medium leading-relaxed" style={{ color: theme.text.mid }}>
                                                 {highlight}
                                             </span>
                                         </motion.div>
                                     ))}
                                 </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    {/* Sidebar */}
-                    <motion.aside className="space-y-8" variants={listVariants}>
-
-                        {/* Toolbox */}
-                        <motion.div
-                            className="rounded-3xl p-6 sm:p-7 shadow-xl space-y-4"
-                            style={{
-                                background: 'rgba(124,58,237,0.08)',
-                                border: '1px solid rgba(139,92,246,0.25)'
-                            }}
-                            variants={cardVariants}
-                        >
-                            <h3 className="text-xl font-semibold text-white">Toolbox I reach for</h3>
-                            <p className="text-sm" style={{ color: '#C4B5FD' }}>
-                                Picked to accelerate delivery without sacrificing maintainability.
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                                {toolbox.map((tool) => (
-                                    <motion.span
-                                        key={tool}
-                                        className="px-3 py-1.5 rounded-full text-xs font-semibold"
-                                        style={{
-                                            background: 'rgba(5,5,8,0.8)',
-                                            border: '1px solid rgba(139,92,246,0.2)',
-                                            color: '#E2E8F0'
-                                        }}
-                                        whileHover={{ scale: 1.05, borderColor: 'rgba(139,92,246,0.5)' }}
-                                    >
-                                        {tool}
-                                    </motion.span>
-                                ))}
                             </div>
                         </motion.div>
+                    ))}
+                </motion.div>
 
-                        {/* Growth Areas */}
-                        <motion.div
-                            className="rounded-3xl p-6 sm:p-7 shadow-xl space-y-4"
+                {/* Toolbox */}
+                <motion.div 
+                    className="flex flex-wrap justify-center gap-3 pt-8"
+                    variants={cardVariants}
+                >
+                    {toolbox.map((tool) => (
+                        <motion.span
+                            key={tool}
+                            className="px-5 py-2.5 rounded-2xl text-sm font-bold tracking-wide cursor-default"
                             style={{
-                                background: 'rgba(15, 10, 30, 0.8)',
-                                border: '1px solid rgba(139,92,246,0.2)'
+                                background: theme.bg.card,
+                                border: `1px solid ${theme.border.default}`,
+                                color: theme.text.mid,
+                                boxShadow: theme.shadow.card
                             }}
-                            variants={cardVariants}
+                            whileHover={{ scale: 1.05, borderColor: theme.color.primary, color: theme.text.high, boxShadow: `0 8px 25px rgba(124,58,237,0.4)` }}
                         >
-                            <h3 className="text-xl font-semibold text-white">Active growth areas</h3>
-                            <div className="space-y-4">
-                                {growthAreas.map((area) => (
-                                    <motion.div
-                                        key={area.title}
-                                        className="rounded-2xl px-4 py-4"
-                                        style={{
-                                            background: 'rgba(5,5,8,0.6)',
-                                            border: '1px solid rgba(139,92,246,0.15)'
-                                        }}
-                                        whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
-                                    >
-                                        <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: '#C4B5FD' }}>
-                                            {area.title}
-                                        </p>
-                                        <p className="text-sm leading-relaxed mt-2" style={{ color: '#94A3B8' }}>
-                                            {area.detail}
-                                        </p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        {/* Collaboration Style */}
-                        <motion.div
-                            className="rounded-3xl p-6 sm:p-7 shadow-xl space-y-3"
-                            style={{
-                                background: 'rgba(99,102,241,0.08)',
-                                border: '1px solid rgba(99,102,241,0.25)'
-                            }}
-                            variants={cardVariants}
-                        >
-                            <p className="text-xs font-semibold tracking-wide uppercase" style={{ color: '#A5B4FC' }}>
-                                Collaboration style
-                            </p>
-                            <p className="text-base leading-relaxed" style={{ color: '#E2E8F0' }}>
-                                I document decisions, keep async stakeholders in the loop, and use motion and prototypes to communicate ideas quickly.
-                            </p>
-                        </motion.div>
-                    </motion.aside>
-                </div>
+                            {tool}
+                        </motion.span>
+                    ))}
+                </motion.div>
             </div>
         </motion.section>
     );
