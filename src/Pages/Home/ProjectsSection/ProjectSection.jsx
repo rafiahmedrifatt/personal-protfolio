@@ -194,7 +194,8 @@ const ProjectSection = () => {
         <motion.div
             ref={ref}
             id='projects'
-            className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-900 py-8 sm:py-12 lg:py-16"
+            className="min-h-screen py-8 sm:py-12 lg:py-16"
+            style={{ background: 'linear-gradient(135deg, #0C0C1D 0%, #050508 50%, #0F0A1E 100%)' }}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={containerVariants}
@@ -206,7 +207,13 @@ const ProjectSection = () => {
                     variants={itemVariants}
                 >
                     <motion.span
-                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg border border-cyan-500/30'
+                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg'
+                        style={{
+                            background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15))',
+                            border: '1px solid rgba(139,92,246,0.35)',
+                            color: '#C4B5FD',
+                            boxShadow: '0 0 20px rgba(124,58,237,0.15)'
+                        }}
                         whileHover={{ scale: 1.05 }}
                     >
                         💼 My Projects
@@ -219,14 +226,21 @@ const ProjectSection = () => {
                     >
                         Projects{' '}
                         <motion.span
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-500 relative"
+                            className="relative"
+                            style={{
+                                background: 'linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text'
+                            }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
                         >
                             I've
                             <motion.div
-                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-green-500 rounded-full"
+                                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 rounded-full"
+                                style={{ background: 'linear-gradient(90deg, #7C3AED, #6366F1)' }}
                                 initial={{ width: 0 }}
                                 animate={isInView ? { width: "100%" } : { width: 0 }}
                                 transition={{ delay: 1, duration: 0.8 }}
@@ -249,7 +263,8 @@ const ProjectSection = () => {
                     {demoData.map((singleData, index) => (
                         <motion.div
                             key={singleData.id}
-                            className='border border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-cyan-500/50 group'
+                            className='rounded-2xl sm:rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl transition-all duration-500 group'
+                            style={{ background: 'rgba(15,10,30,0.85)', border: '1px solid rgba(139,92,246,0.2)' }}
                             variants={cardVariants}
                             whileHover="hover"
                             initial={{ opacity: 0, y: 50 }}
@@ -257,7 +272,7 @@ const ProjectSection = () => {
                             transition={{ delay: 1.2 + index * 0.2, duration: 0.8 }}
                         >
                             {/* Subtle gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(99,102,241,0.04))' }}></div>
 
                             {/* Top Row: Image and Description */}
                             <div className='grid grid-cols-1 lg:grid-cols-2 relative z-10'>
@@ -267,7 +282,7 @@ const ProjectSection = () => {
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-cyan-600/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(99,102,241,0.08))' }}></div>
                                     <motion.img
                                         src={singleData.image}
                                         alt={singleData.title}
@@ -289,11 +304,11 @@ const ProjectSection = () => {
                                             transition={{ delay: 1.6 + index * 0.2, duration: 0.6 }}
                                         >
                                             <h3
-                                                className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white group-hover:text-cyan-400 transition-colors duration-500 leading-tight"
+                                                className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white transition-colors duration-500 leading-tight" style={{ color: 'inherit' }} onMouseEnter={e => e.target.style.color='#C4B5FD'} onMouseLeave={e => e.target.style.color='white'}
                                             >
                                                 {singleData.title}
                                             </h3>
-                                            <div className="absolute -left-2 sm:-left-4 top-0 w-0.5 sm:w-1 h-full bg-gradient-to-b from-cyan-500 to-green-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+                                            <div className="absolute -left-2 sm:-left-4 top-0 w-0.5 sm:w-1 h-full rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" style={{ background: 'linear-gradient(180deg, #7C3AED, #6366F1)' }}></div>
                                         </motion.div>
 
                                         {/* Description */}
@@ -314,7 +329,8 @@ const ProjectSection = () => {
                                         >
                                             <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-slate-200 flex items-center">
                                                 <motion.div
-                                                    className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full mr-2 sm:mr-3"
+                                                    className="w-2 h-2 sm:w-3 sm:h-3 rounded-full mr-2 sm:mr-3"
+                                                    style={{ background: 'linear-gradient(135deg, #7C3AED, #6366F1)' }}
                                                     animate={{ scale: [1, 1.2, 1] }}
                                                     transition={{ duration: 2, repeat: Infinity }}
                                                 />
@@ -324,7 +340,8 @@ const ProjectSection = () => {
                                                 {singleData.tech.map((singleTech, techIndex) => (
                                                     <motion.span
                                                         key={techIndex}
-                                                        className="px-2 py-1 sm:px-3 sm:py-1.5 bg-slate-700/50 border border-slate-600/50 rounded-full text-xs sm:text-sm font-medium text-slate-300 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-green-500 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
+                                                        className="px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-default"
+                                                        style={{ background: 'rgba(5,5,8,0.8)', border: '1px solid rgba(139,92,246,0.2)', color: '#E2E8F0' }}
                                                         initial={{ opacity: 0, scale: 0 }}
                                                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                                                         transition={{
@@ -350,14 +367,15 @@ const ProjectSection = () => {
                                                 href={singleData.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-cyan-600 to-green-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)', boxShadow: '0 8px 25px rgba(124,58,237,0.35)' }}
                                                 whileHover={{
                                                     scale: 1.05,
-                                                    boxShadow: "0 10px 30px -5px rgba(34, 211, 238, 0.4)"
+                                                    boxShadow: "0 15px 40px rgba(124,58,237,0.55)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-700 to-green-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, #6D28D9 0%, #4F46E5 100%)' }}></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"
@@ -374,14 +392,15 @@ const ProjectSection = () => {
                                                 href={singleData.github.client}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-slate-700 text-white font-semibold rounded-xl hover:bg-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                style={{ background: 'rgba(15,10,30,0.9)', border: '1px solid rgba(139,92,246,0.3)' }}
                                                 whileHover={{
                                                     scale: 1.05,
-                                                    boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
+                                                    boxShadow: "0 10px 30px rgba(124,58,237,0.25)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-slate-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" style={{ background: 'rgba(124,58,237,0.2)' }}></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"
@@ -396,14 +415,15 @@ const ProjectSection = () => {
 
                                             <motion.button
                                                 onClick={() => document.getElementById(`my_modal_${singleData.id}`).showModal()}
-                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 bg-slate-800 border-2 border-slate-600 text-slate-300 font-semibold rounded-xl hover:bg-slate-700 hover:border-slate-500 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                className="group/btn relative px-3 py-2 sm:px-4 sm:py-3 font-semibold rounded-xl transition-all duration-300 shadow-md flex items-center gap-2 sm:gap-3 overflow-hidden text-xs sm:text-sm"
+                                                style={{ background: 'rgba(5,5,8,0.8)', border: '2px solid rgba(139,92,246,0.3)', color: '#C4B5FD' }}
                                                 whileHover={{
                                                     scale: 1.05,
-                                                    boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.4)"
+                                                    boxShadow: "0 10px 25px rgba(124,58,237,0.2)"
                                                 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <div className="absolute inset-0 bg-slate-700 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                                                <div className="absolute inset-0 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" style={{ background: 'rgba(124,58,237,0.15)' }}></div>
                                                 <motion.svg
                                                     width="16"
                                                     height="16"

@@ -23,10 +23,7 @@ const Footer = () => {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
-            }
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 }
         }
     };
 
@@ -35,10 +32,7 @@ const Footer = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.8, ease: "easeOut" }
         }
     };
 
@@ -47,24 +41,22 @@ const Footer = () => {
         visible: {
             opacity: 1,
             scale: 1,
-            transition: {
-                duration: 0.5,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.5, ease: "easeOut" }
         },
         hover: {
             scale: 1.1,
             rotate: 5,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.3, ease: "easeOut" }
         }
     };
 
     return (
         <motion.footer
-            className="bg-slate-900 text-white"
+            className="text-white"
+            style={{
+                background: '#050508',
+                borderTop: '1px solid rgba(139,92,246,0.15)'
+            }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -72,16 +64,26 @@ const Footer = () => {
             role="contentinfo"
             aria-label="Footer"
         >
+            {/* Subtle glow at top */}
+            <div
+                className="w-full h-px"
+                style={{ background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.4), transparent)' }}
+            />
+
             {/* Main Footer Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+
                     {/* Brand Section */}
-                    <motion.div
-                        className="space-y-4 sm:space-y-6"
-                        variants={itemVariants}
-                    >
+                    <motion.div className="space-y-4 sm:space-y-6" variants={itemVariants}>
                         <motion.h3
-                            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-green-500 bg-clip-text text-transparent"
+                            className="text-xl sm:text-2xl font-bold"
+                            style={{
+                                background: 'linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text'
+                            }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
@@ -89,7 +91,8 @@ const Footer = () => {
                             Rafi Ahmed Rifat
                         </motion.h3>
                         <motion.p
-                            className="text-slate-400 leading-relaxed text-sm sm:text-base"
+                            className="leading-relaxed text-sm sm:text-base"
+                            style={{ color: '#64748B' }}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
@@ -104,10 +107,22 @@ const Footer = () => {
                                     <motion.a
                                         key={index}
                                         href={social.href}
-                                        className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition-colors duration-300 group border border-slate-700 hover:border-cyan-400"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 group"
+                                        style={{
+                                            background: 'rgba(15,10,30,0.8)',
+                                            border: '1px solid rgba(139,92,246,0.25)',
+                                            color: '#64748B'
+                                        }}
                                         aria-label={social.label}
                                         variants={socialVariants}
-                                        whileHover="hover"
+                                        whileHover={{
+                                            scale: 1.1,
+                                            rotate: 5,
+                                            backgroundColor: 'rgba(124,58,237,0.25)',
+                                            borderColor: 'rgba(139,92,246,0.6)',
+                                            color: '#C4B5FD',
+                                            boxShadow: '0 0 20px rgba(124,58,237,0.3)'
+                                        }}
                                         initial={{ opacity: 0, scale: 0 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
@@ -120,12 +135,9 @@ const Footer = () => {
                     </motion.div>
 
                     {/* Quick Links */}
-                    <motion.div
-                        className="space-y-4 sm:space-y-6"
-                        variants={itemVariants}
-                    >
+                    <motion.div className="space-y-4 sm:space-y-6" variants={itemVariants}>
                         <motion.h4
-                            className="text-lg sm:text-xl font-semibold"
+                            className="text-lg sm:text-xl font-semibold text-white"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.8, duration: 0.6 }}
@@ -137,26 +149,24 @@ const Footer = () => {
                                 <motion.a
                                     key={index}
                                     href={link.href}
-                                    className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center group text-sm sm:text-base"
+                                    className="flex items-center group text-sm sm:text-base transition-colors duration-300"
+                                    style={{ color: '#64748B' }}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                                    whileHover={{ x: 5 }}
+                                    whileHover={{ x: 5, color: '#C4B5FD' }}
                                 >
                                     <span>{link.name}</span>
-                                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: '#8B5CF6' }} />
                                 </motion.a>
                             ))}
                         </nav>
                     </motion.div>
 
                     {/* Contact Info */}
-                    <motion.div
-                        className="space-y-4 sm:space-y-6"
-                        variants={itemVariants}
-                    >
+                    <motion.div className="space-y-4 sm:space-y-6" variants={itemVariants}>
                         <motion.h4
-                            className="text-lg sm:text-xl font-semibold"
+                            className="text-lg sm:text-xl font-semibold text-white"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.6 }}
@@ -165,16 +175,18 @@ const Footer = () => {
                         </motion.h4>
                         <div className="space-y-3 sm:space-y-4">
                             <motion.p
-                                className="text-slate-400 flex items-center text-sm sm:text-base"
+                                className="flex items-center text-sm sm:text-base"
+                                style={{ color: '#64748B' }}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 1.4, duration: 0.6 }}
                             >
-                                <Mail className="w-4 h-4 mr-2" />
+                                <Mail className="w-4 h-4 mr-2" style={{ color: '#8B5CF6' }} />
                                 rafiahmedrifat1@gmail.com
                             </motion.p>
                             <motion.p
-                                className="text-slate-400 text-sm sm:text-base"
+                                className="text-sm sm:text-base"
+                                style={{ color: '#64748B' }}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 1.6, duration: 0.6 }}
@@ -183,13 +195,17 @@ const Footer = () => {
                             </motion.p>
                             <motion.a
                                 href="#contact"
-                                className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500 to-green-500 text-white rounded-lg hover:from-cyan-600 hover:to-green-600 transition-all duration-300 group text-sm sm:text-base font-semibold"
+                                className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 text-white rounded-lg transition-all duration-300 group text-sm sm:text-base font-semibold"
+                                style={{
+                                    background: 'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)',
+                                    boxShadow: '0 8px 25px rgba(124,58,237,0.3)'
+                                }}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 1.8, duration: 0.6 }}
                                 whileHover={{
                                     scale: 1.05,
-                                    boxShadow: "0 10px 30px -5px rgba(56, 189, 248, 0.4)"
+                                    boxShadow: "0 15px 35px rgba(124,58,237,0.5)"
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -202,11 +218,12 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-slate-800">
+            <div style={{ borderTop: '1px solid rgba(139,92,246,0.1)' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0">
                         <motion.p
-                            className="text-slate-400 text-xs sm:text-sm"
+                            className="text-xs sm:text-sm"
+                            style={{ color: '#334155' }}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2, duration: 0.6 }}
@@ -214,7 +231,8 @@ const Footer = () => {
                             © {currentYear} Rafi Ahmed Rifat. All rights reserved.
                         </motion.p>
                         <motion.p
-                            className="text-slate-400 text-xs sm:text-sm flex items-center"
+                            className="text-xs sm:text-sm flex items-center"
+                            style={{ color: '#334155' }}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2.2, duration: 0.6 }}
@@ -224,7 +242,7 @@ const Footer = () => {
                                 animate={{ scale: [1, 1.2, 1] }}
                                 transition={{ duration: 1, repeat: Infinity }}
                             >
-                                <Heart className="w-3 h-3 sm:w-4 sm:h-4 mx-1 text-red-500" />
+                                <Heart className="w-3 h-3 sm:w-4 sm:h-4 mx-1 text-violet-500" />
                             </motion.span>
                             {' '}and lots of coffee
                         </motion.p>

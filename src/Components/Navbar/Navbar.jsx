@@ -17,10 +17,7 @@ const Navbar = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.8, ease: "easeOut" }
         }
     };
 
@@ -29,24 +26,23 @@ const Navbar = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.6, ease: "easeOut" }
         },
         hover: {
             scale: 1.05,
             y: -2,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.3, ease: "easeOut" }
         }
     };
 
     return (
         <motion.nav
-            className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-700/50 transition-all duration-300"
+            className="sticky top-0 z-50 backdrop-blur-md shadow-lg transition-all duration-300"
+            style={{
+                background: 'rgba(5, 5, 8, 0.92)',
+                borderBottom: '1px solid rgba(139, 92, 246, 0.2)',
+                boxShadow: '0 4px 30px rgba(0,0,0,0.5)'
+            }}
             initial="hidden"
             animate="visible"
             variants={navVariants}
@@ -55,7 +51,8 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 sm:h-20">
-                    {/* Logo Section */}
+
+                    {/* Logo */}
                     <div className="flex-shrink-0">
                         <motion.div
                             className="relative group"
@@ -67,7 +64,10 @@ const Navbar = () => {
                                 alt="Logo"
                                 className="bg-transparent w-24 h-16 sm:w-28 sm:h-18 lg:w-32 lg:h-20 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-green-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div
+                                className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15))' }}
+                            />
                         </motion.div>
                     </div>
 
@@ -89,11 +89,19 @@ const Navbar = () => {
                                         smooth={true}
                                         duration={500}
                                         offset={-80}
-                                        className="inline-flex items-center gap-2 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-all duration-300 mr-4 sm:mr-6 relative overflow-hidden group cursor-pointer"
+                                        className="inline-flex items-center gap-2 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm font-semibold transition-all duration-300 mr-4 sm:mr-6 relative overflow-hidden group cursor-pointer"
+                                        style={{ color: '#94A3B8' }}
+                                        activeStyle={{ color: '#C4B5FD' }}
                                     >
-                                        <span className="relative z-10">{singleLink.display}</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-green-500/10 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                                        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                                        <span className="relative z-10 hover:text-violet-300 transition-colors duration-200">{singleLink.display}</span>
+                                        <div
+                                            className="absolute inset-0 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                                            style={{ background: 'rgba(124,58,237,0.12)' }}
+                                        />
+                                        <div
+                                            className="absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                                            style={{ background: 'linear-gradient(90deg, #7C3AED, #6366F1)' }}
+                                        />
                                     </Link>
                                 </motion.li>
                             )}
@@ -102,14 +110,15 @@ const Navbar = () => {
 
                     {/* Right Section */}
                     <div className="flex items-center space-x-4">
-                        {/* Resume Button - Desktop */}
+                        {/* Resume Button */}
                         <motion.a
                             href='https://drive.google.com/uc?export=download&id=1RN3sJ-M8K_nr09Fr36WDSisajkBE4dYT'
-                            className="hidden lg:inline-flex items-center px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
-                            whileHover={{
-                                scale: 1.05,
-                                boxShadow: "0 10px 30px -5px rgba(56, 189, 248, 0.4)"
+                            className="hidden lg:inline-flex items-center px-4 py-2 sm:px-6 sm:py-2.5 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden group"
+                            style={{
+                                background: 'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)',
+                                boxShadow: '0 8px 25px rgba(124,58,237,0.35)'
                             }}
+                            whileHover={{ scale: 1.05, boxShadow: "0 12px 35px rgba(124,58,237,0.55)" }}
                             whileTap={{ scale: 0.95 }}
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -118,21 +127,30 @@ const Navbar = () => {
                             title="Download Resume"
                         >
                             <span className="relative z-10">Resume</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                            <div className="absolute inset-0 bg-white/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom"></div>
+                            <div
+                                className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                                style={{ background: 'linear-gradient(135deg, #6D28D9 0%, #4F46E5 100%)' }}
+                            />
                         </motion.a>
 
                         {/* Mobile Menu */}
                         <div className="lg:hidden">
                             <Menu>
-                                <MenuButton className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 border border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/20">
+                                <MenuButton
+                                    className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none"
+                                    style={{
+                                        background: 'rgba(15,10,30,0.8)',
+                                        border: '1px solid rgba(139,92,246,0.3)',
+                                        color: '#94A3B8'
+                                    }}
+                                >
                                     <motion.svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         strokeWidth={1.5}
                                         stroke="currentColor"
-                                        className="size-5 sm:size-6 text-slate-300 transition-transform duration-300"
+                                        className="size-5 sm:size-6 transition-transform duration-300"
                                         whileHover={{ rotate: 90 }}
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
@@ -142,7 +160,12 @@ const Navbar = () => {
                                 <MenuItems
                                     transition
                                     anchor="bottom end"
-                                    className="w-48 sm:w-56 origin-top-right rounded-xl border border-slate-700 bg-slate-800/95 backdrop-blur-md p-2 text-sm shadow-xl transition duration-200 ease-out [--anchor-gap:--spacing(1)] focus:outline-none z-50 data-closed:scale-95 data-closed:opacity-0"
+                                    className="w-48 sm:w-56 origin-top-right rounded-xl p-2 text-sm shadow-2xl transition duration-200 ease-out [--anchor-gap:--spacing(1)] focus:outline-none z-50 data-closed:scale-95 data-closed:opacity-0"
+                                    style={{
+                                        background: 'rgba(10, 8, 20, 0.97)',
+                                        border: '1px solid rgba(139,92,246,0.3)',
+                                        backdropFilter: 'blur(16px)'
+                                    }}
                                 >
                                     {link.map((singleLink, index) =>
                                         <MenuItem key={singleLink.to} className="mb-1 last:mb-0">
@@ -156,15 +179,17 @@ const Navbar = () => {
                                                     smooth={true}
                                                     duration={500}
                                                     offset={-80}
-                                                    className="group flex w-full items-center gap-3 rounded-lg px-3 py-3 text-slate-300 hover:text-cyan-400 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-green-500/10 transition-all duration-300 cursor-pointer relative overflow-hidden"
+                                                    className="group flex w-full items-center gap-3 rounded-lg px-3 py-3 transition-all duration-300 cursor-pointer"
+                                                    style={{ color: '#94A3B8' }}
                                                 >
                                                     <motion.div
-                                                        className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-0 group-hover:scale-100"
+                                                        className="w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                                        style={{ background: 'linear-gradient(135deg, #7C3AED, #6366F1)' }}
                                                         whileHover={{ scale: 1.2 }}
                                                     />
-                                                    <span className="font-medium">{singleLink.display}</span>
+                                                    <span className="font-medium group-hover:text-violet-300 transition-colors duration-200">{singleLink.display}</span>
                                                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="w-4 h-4" fill="none" stroke="#8B5CF6" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                         </svg>
                                                     </div>

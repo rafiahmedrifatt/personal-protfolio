@@ -2,30 +2,27 @@
 
 @import "tailwindcss";
 
-/* Custom scrollbar for Modern Tech theme */
+/* ── Scrollbar ── */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #050508;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #38bdf8;
+  background: #7C3AED;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
+  background: #6366F1;
 }
 
-/* Smooth scrolling */
+/* ── Smooth scroll ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* Global styles */
+/* ── Base ── */
 * {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
@@ -34,119 +31,71 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
-  color: #e5e7eb;
+  background-color: #050508;
+  color: #e2e8f0;
   overflow-x: hidden;
 }
 
-/* Custom animations */
+/* ── Text selection ── */
+::selection {
+  background-color: #7C3AED;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #7C3AED;
+  color: #ffffff;
+}
+
+/* ── Animations ── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
 }
-
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
 }
 
-/* Utility classes */
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out;
-}
+/* ── Utility classes ── */
+.animate-fadeInUp    { animation: fadeInUp 0.8s ease-out; }
+.animate-fadeInLeft  { animation: fadeInLeft 0.8s ease-out; }
+.animate-fadeInRight { animation: fadeInRight 0.8s ease-out; }
+.animate-pulse-slow  { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-float       { animation: float 3s ease-in-out infinite; }
 
-.animate-fadeInLeft {
-  animation: fadeInLeft 0.8s ease-out;
-}
-
-.animate-fadeInRight {
-  animation: fadeInRight 0.8s ease-out;
-}
-
-.animate-pulse-slow {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Glass morphism effect */
+/* ── Glassmorphism ── */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 10, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
 }
-
 .glass-dark {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 5, 8, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
-/* Gradient text */
+/* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  background: linear-gradient(135deg, #C4B5FD, #A78BFA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Custom focus styles */
+/* ── Focus ring ── */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900;
-}
-
-/* Selection styles */
-::selection {
-  background-color: #38bdf8;
-  color: #020617;
-}
-
-::-moz-selection {
-  background-color: #38bdf8;
-  color: #020617;
+  @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-[#050508];
 }
