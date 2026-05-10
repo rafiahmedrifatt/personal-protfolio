@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { RouterProvider } from 'react-router'
 import { router } from './Routes/Router.jsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 // Register Service Worker for offline support and caching
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
@@ -16,6 +17,8 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>,
 )

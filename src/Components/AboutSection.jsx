@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import profilePhoto from '../../../images/aboutme.png';
-import { theme } from '../../../theme';
+import profilePhoto from '../images/aboutme.png';
+import { theme } from '../theme';
 
 const AboutSection = () => {
     const ref = useRef(null);
@@ -79,6 +79,8 @@ const AboutSection = () => {
                                 src={profilePhoto}
                                 alt="Rafi Ahmed Rifat"
                                 className="relative z-10 w-[280px] h-[350px] sm:w-[340px] sm:h-[420px] object-cover object-top rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                                loading="lazy"
+                                decoding="async"
                                 style={{
                                     border: `1px solid ${theme.border.strong}`,
                                     boxShadow: theme.shadow.image
@@ -145,18 +147,18 @@ const AboutSection = () => {
                                     Rafi Ahmed Rifat
                                 </h3>
                                 <p className="text-lg font-semibold tracking-wide uppercase mb-6" style={{ color: theme.color.primary2 }}>
-                                    MERN Stack Developer
+                                    Full Stack Software Developer
                                 </p>
 
                                 <div className="space-y-5 text-base sm:text-lg leading-relaxed font-light" style={{ color: theme.text.low }}>
                                     <p>
-                                        I'm a <strong style={{ color: theme.text.high, fontWeight: 600 }}>full-stack developer</strong> based in Dhaka, Bangladesh. I started coding in <strong style={{ color: theme.text.high, fontWeight: 600 }}>2019</strong> out of curiosity and it quickly became my passion.
+                                        I am a <strong style={{ color: theme.text.high, fontWeight: 600 }}>Full Stack Software Developer</strong> based in Dhaka, Bangladesh. With a strong foundation in modern web technologies, I specialize in designing and developing scalable, high-performance applications.
                                     </p>
                                     <p>
-                                        I specialize in the <span className="px-2 py-0.5 rounded-md text-sm font-semibold inline-block" style={{ background: theme.gradient.badge, color: theme.text.primary, border: `1px solid ${theme.border.subtle}` }}>MERN stack</span>, building fast and scalable web apps. I love turning ideas into great products with clean code and thoughtful design.
+                                        My expertise lies in the <span className="px-2 py-0.5 rounded-md text-sm font-semibold inline-block" style={{ background: theme.gradient.badge, color: theme.text.primary, border: `1px solid ${theme.border.subtle}` }}>MERN stack</span>, where I focus on building robust backend architectures and intuitive, responsive frontend interfaces. I am dedicated to translating complex requirements into elegant, maintainable solutions.
                                     </p>
                                     <p>
-                                        Currently studying <span className="px-2 py-0.5 rounded-md text-sm font-semibold inline-block" style={{ background: theme.gradient.badge, color: theme.text.primary, border: `1px solid ${theme.border.subtle}` }}>Computer Science</span> at the University of the People - always learning, always building.
+                                        I am currently pursuing a degree in <span className="px-2 py-0.5 rounded-md text-sm font-semibold inline-block" style={{ background: theme.gradient.badge, color: theme.text.primary, border: `1px solid ${theme.border.subtle}` }}>Computer Science</span> at the University of the People, continuously expanding my technical knowledge and engineering capabilities.
                                     </p>
                                 </div>
                             </div>

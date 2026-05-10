@@ -108,13 +108,13 @@ const ContactSection = () => {
                             boxShadow: '0 0 20px rgba(124,58,237,0.15)'
                         }}
                     >
-                        💬 Let&apos;s connect
+                        💬 Get in Touch
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                        Ready to collaborate on something exciting?
+                        Open to New Opportunities
                     </h2>
                     <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#94A3B8' }}>
-                        Whether you have a project in mind or just want to say hi, drop me a line — curious conversations are where the best ideas start.
+                        Whether you have a specific project requirement, an employment opportunity, or simply wish to connect, I am always open to professional inquiries.
                     </p>
                 </motion.div>
 
@@ -171,9 +171,9 @@ const ContactSection = () => {
                         }}
                         variants={cardVariants}
                     >
-                        <h3 className="text-2xl font-bold text-white">Prefer email?</h3>
+                        <h3 className="text-2xl font-bold text-white">Reach out via Email</h3>
                         <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#94A3B8' }}>
-                            I typically reply within a day. Include a quick overview of what you&apos;re building, and we can jump straight into ideas.
+                            I typically respond within 24 hours. Please provide a brief overview of your inquiry or project requirements.
                         </p>
                         <div
                             className="rounded-2xl px-5 py-4 text-sm"
@@ -183,7 +183,7 @@ const ContactSection = () => {
                                 color: '#C4B5FD'
                             }}
                         >
-                            👇 Tap below and your mail client will open with my address prefilled.
+                            Click the button below to compose an email directly to my professional address.
                         </div>
                         <a
                             href="mailto:rafiahmedrifat1@gmail.com"
@@ -195,13 +195,13 @@ const ContactSection = () => {
                             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 15px 40px rgba(124,58,237,0.6)'}
                             onMouseLeave={e => e.currentTarget.style.boxShadow = '0 10px 30px rgba(124,58,237,0.4)'}
                         >
-                            Compose an email
+                            Compose Email
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h6m0 0v6m0-6l-8 8m-5-3v6h6" />
                             </svg>
                         </a>
                         <div className="text-xs" style={{ color: '#475569' }}>
-                            Not into email? Ping me on WhatsApp — happy to chat there too.
+                            Alternatively, you can reach me directly via WhatsApp for urgent inquiries.
                         </div>
                     </motion.div>
                 </div>

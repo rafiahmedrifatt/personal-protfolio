@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { theme } from '../../../theme';
+import { theme } from '../theme';
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 28 },
@@ -102,10 +102,10 @@ const SkillsSection = () => {
 
                 {/* Header */}
                 <motion.div className="flex flex-col items-center text-center space-y-4" variants={cardVariants}>
-                    <span 
+                    <span
                         className="text-sm font-bold tracking-[0.2em] uppercase mb-2 px-4 py-1.5 rounded-full"
-                        style={{ 
-                            color: theme.color.primary2, 
+                        style={{
+                            color: theme.color.primary2,
                             background: theme.gradient.badge,
                             border: `1px solid ${theme.border.subtle}`
                         }}
@@ -114,7 +114,7 @@ const SkillsSection = () => {
                     </span>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
                         <span style={{ color: theme.text.high }}>Crafting full-stack </span>
-                        <span style={{ 
+                        <span style={{
                             background: theme.gradient.text,
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
@@ -143,7 +143,7 @@ const SkillsSection = () => {
                         >
                             {/* Subtle decorative gradient in background of card */}
                             <div className="absolute top-0 right-0 w-32 h-32 opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-bl-full pointer-events-none"
-                                 style={{ background: `linear-gradient(to bottom left, ${theme.color.primary}, transparent)` }} />
+                                style={{ background: `linear-gradient(to bottom left, ${theme.color.primary}, transparent)` }} />
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex items-center gap-4 mb-6">
@@ -180,7 +180,7 @@ const SkillsSection = () => {
                 </motion.div>
 
                 {/* Toolbox */}
-                <motion.div 
+                <motion.div
                     className="flex flex-wrap justify-center gap-3 pt-8"
                     variants={cardVariants}
                 >
