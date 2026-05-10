@@ -60,7 +60,7 @@ const Navbar = () => {
                             transition={{ duration: 0.3 }}
                         >
                             <img
-                                src="./logo.png"
+                                src="/logo.png"
                                 alt="Logo"
                                 className="bg-transparent w-24 h-16 sm:w-28 sm:h-18 lg:w-32 lg:h-20 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
