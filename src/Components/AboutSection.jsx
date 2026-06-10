@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import profilePhoto from '../images/aboutme.png';
+import { MapPin, GraduationCap, Code2, Briefcase, Calendar, Award } from 'lucide-react';
 import { theme } from '../theme';
 
 const AboutSection = () => {
@@ -91,7 +91,7 @@ const AboutSection = () => {
                             <motion.div
                                 className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-2 px-6 py-3 rounded-full backdrop-blur-md"
                                 style={{
-                                    background: 'rgba(124, 58, 237, 0.8)',
+                                    background: 'rgba(124, 58, 237, 0.9)',
                                     border: `1px solid ${theme.border.strong}`,
                                     boxShadow: theme.shadow.button,
                                     color: theme.text.high
@@ -99,7 +99,7 @@ const AboutSection = () => {
                                 animate={{ y: [0, -8, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                             >
-                                <span className="text-xl">🚀</span>
+                                <Briefcase className="w-4 h-4" />
                                 <span className="font-bold text-sm tracking-wide whitespace-nowrap">
                                     Open to Work
                                 </span>
@@ -167,9 +167,9 @@ const AboutSection = () => {
                         {/* Info Pills */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {[
-                                { icon: '📍', title: 'Location', text: 'Dhaka, Bangladesh' },
-                                { icon: '🎓', title: 'Education', text: 'University of the People' },
-                                { icon: '💻', title: 'Subject', text: 'Computer Science Student' },
+                                { icon: <MapPin className="w-5 h-5" />, title: 'Location', text: 'Dhaka, Bangladesh' },
+                                { icon: <GraduationCap className="w-5 h-5" />, title: 'Education', text: 'University of the People' },
+                                { icon: <Code2 className="w-5 h-5" />, title: 'Expertise', text: 'Full Stack Development' },
                             ].map((item, idx) => (
                                 <motion.div
                                     key={item.text}
@@ -194,6 +194,31 @@ const AboutSection = () => {
                                             {item.text}
                                         </p>
                                     </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Stats Section */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+                            {[
+                                { label: 'Projects Completed', value: '50+' },
+                                { label: 'Happy Clients', value: '20+' },
+                                { label: 'Experience', value: '3+ Years' },
+                                { label: 'Tech Stack', value: '15+' },
+                            ].map((stat, idx) => (
+                                <motion.div
+                                    key={stat.label}
+                                    className="p-4 rounded-2xl text-center"
+                                    style={{
+                                        background: 'rgba(139, 92, 246, 0.05)',
+                                        border: `1px solid ${theme.border.subtle}`
+                                    }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: 0.5, delay: 0.7 + (idx * 0.1) }}
+                                >
+                                    <p className="text-2xl font-bold" style={{ color: theme.text.high }}>{stat.value}</p>
+                                    <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: theme.text.low }}>{stat.label}</p>
                                 </motion.div>
                             ))}
                         </div>

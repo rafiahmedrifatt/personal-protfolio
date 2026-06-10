@@ -59,7 +59,7 @@ const HeroSection = () => {
             variants={containerVariants}
             aria-label="Hero section introducing Rafi Ahmed Rifat"
         >
-            {/* ── Ambient Glow Orbs ── */}
+            {/* --- Ambient Glow Orbs --- */}
             <motion.div
                 className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)', filter: 'blur(60px)' }}
@@ -79,7 +79,7 @@ const HeroSection = () => {
                 transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* ── Subtle Grid Overlay ── */}
+            {/* --- Subtle Grid Overlay --- Ratio */}
             <div
                 className="absolute inset-0 pointer-events-none opacity-[0.03]"
                 style={{
@@ -89,7 +89,7 @@ const HeroSection = () => {
                 }}
             />
 
-            {/* ── Main Content ── */}
+            {/* --- Main Content --- */}
             <div className='flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 w-full max-w-7xl mx-auto relative z-10 min-h-screen'>
 
                 {/* Left Content */}
@@ -111,7 +111,7 @@ const HeroSection = () => {
                             whileTap={{ scale: 0.95 }}
                         >
                             <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-                            👋 Welcome!
+                            Available for new projects
                         </motion.span>
                         <motion.p
                             className='text-lg sm:text-xl lg:text-2xl font-light'
@@ -160,16 +160,17 @@ const HeroSection = () => {
                         </motion.span>
                     </motion.h1>
 
-                    {/* Role */}
-                    <motion.h2
-                        className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold'
-                        style={{ color: '#E2E8F0' }}
+                    {/* Role with Typing Effect */}
+                    <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.5, duration: 0.8 }}
                     >
-                        Full Stack Software Developer
-                    </motion.h2>
+                        <h2 className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold flex items-center gap-3'>
+                            <span style={{ color: '#E2E8F0' }}>Software Engineer</span>
+                            <span className="w-1 h-8 sm:h-10 bg-violet-500 animate-pulse" />
+                        </h2>
+                    </motion.div>
 
                     {/* Description Card */}
                     <motion.div
@@ -193,45 +194,68 @@ const HeroSection = () => {
                         </p>
                     </motion.div>
 
-                    {/* Social Links */}
-                    <motion.div
-                        className='flex gap-4 sm:gap-6 pt-2'
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 2.5, duration: 0.8 }}
-                    >
-                        {socialLinks.map((social, index) => (
-                            <motion.a
-                                key={social.icon}
-                                href={social.href}
-                                target='_blank'
-                                rel="noopener noreferrer"
-                                className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300'
-                                style={{
-                                    background: 'rgba(15,10,30,0.8)',
-                                    border: '1px solid rgba(139,92,246,0.25)',
-                                    color: '#94A3B8',
-                                    backdropFilter: 'blur(10px)'
-                                }}
-                                whileHover={{
-                                    scale: 1.12,
-                                    rotate: 5,
-                                    backgroundColor: 'rgba(124,58,237,0.2)',
-                                    borderColor: 'rgba(139,92,246,0.7)',
-                                    color: '#C4B5FD',
-                                    boxShadow: '0 0 25px rgba(124,58,237,0.35)'
-                                }}
-                                whileTap={{ scale: 0.95 }}
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 2.7 + index * 0.1, duration: 0.5 }}
-                            >
-                                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" aria-label={social.icon}>
-                                    <path d={socialIcons[social.icon]} />
-                                </svg>
-                            </motion.a>
-                        ))}
-                    </motion.div>
+                    {/* Social Links & Tech Stack */}
+                    <div className='space-y-6 pt-4'>
+                        <motion.div
+                            className='flex gap-4 sm:gap-6'
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 2.5, duration: 0.8 }}
+                        >
+                            {socialLinks.map((social, index) => (
+                                <motion.a
+                                    key={social.icon}
+                                    href={social.href}
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                    className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300'
+                                    style={{
+                                        background: 'rgba(15,10,30,0.8)',
+                                        border: '1px solid rgba(139,92,246,0.25)',
+                                        color: '#94A3B8',
+                                        backdropFilter: 'blur(10px)'
+                                    }}
+                                    whileHover={{
+                                        scale: 1.12,
+                                        rotate: 5,
+                                        backgroundColor: 'rgba(124,58,237,0.2)',
+                                        borderColor: 'rgba(139,92,246,0.7)',
+                                        color: '#C4B5FD',
+                                        boxShadow: '0 0 25px rgba(124,58,237,0.35)'
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 2.7 + index * 0.1, duration: 0.5 }}
+                                >
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" aria-label={social.icon}>
+                                        <path d={socialIcons[social.icon]} />
+                                    </svg>
+                                </motion.a>
+                            ))}
+                        </motion.div>
+
+                        <motion.div
+                            className='flex flex-wrap gap-3'
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 3, duration: 1 }}
+                        >
+                            {['React', 'Node.js', 'MongoDB', 'TypeScript', 'Next.js'].map((tech) => (
+                                <span 
+                                    key={tech}
+                                    className="text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-md"
+                                    style={{ 
+                                        background: 'rgba(139, 92, 246, 0.05)', 
+                                        border: '1px solid rgba(139, 92, 246, 0.1)',
+                                        color: '#64748B'
+                                    }}
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </motion.div>
+                    </div>
 
                     {/* CTA Button */}
                     <motion.div
@@ -267,7 +291,7 @@ const HeroSection = () => {
                     </motion.div>
                 </motion.article>
 
-                {/* Right — Profile Image */}
+                {/* Right - Profile Image */}
                 <motion.figure
                     className='lg:w-1/3 mt-8 sm:mt-12 lg:mt-0 flex justify-center'
                     initial={{ opacity: 0, x: 100 }}

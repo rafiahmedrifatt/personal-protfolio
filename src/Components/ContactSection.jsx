@@ -100,15 +100,17 @@ const ContactSection = () => {
                 {/* Header */}
                 <motion.div className="text-center space-y-4" variants={cardVariants}>
                     <span
-                        className="inline-block px-6 py-3 rounded-full text-sm font-medium shadow-lg"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold"
                         style={{
-                            background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15))',
-                            border: '1px solid rgba(139,92,246,0.35)',
-                            color: '#C4B5FD',
-                            boxShadow: '0 0 20px rgba(124,58,237,0.15)'
+                            background: 'rgba(139, 92, 246, 0.1)',
+                            border: '1px solid rgba(139, 92, 246, 0.2)',
+                            color: '#A78BFA',
                         }}
                     >
-                        💬 Get in Touch
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        Get in Touch
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
                         Open to New Opportunities

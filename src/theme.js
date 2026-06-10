@@ -1,13 +1,13 @@
 /**
- * ─────────────────────────────────────────────
- *  SITE-WIDE THEME  —  Deep Obsidian + Violet
+ * =============================================
+ *  SITE-WIDE THEME  -  Deep Obsidian + Violet
  *  Change values here to retheme the entire site.
- * ─────────────────────────────────────────────
+ * =============================================
  *
  * PRIMARY   : #8B5CF6  (violet-500)
  * SECONDARY : #6366F1  (indigo-500)
- * ACCENT    : #7C3AED  (violet-700 — deeper glow)
- * BG BASE   : #050508  →  #0C0C1D  →  #0F0A1E
+ * ACCENT    : #7C3AED  (violet-700 - deeper glow)
+ * BG BASE   : #050508  ->  #0C0C1D  ->  #0F0A1E
  * SURFACE   : #0F0A1E / rgba(15,10,30,0.75)
  * TEXT HI   : #FFFFFF
  * TEXT MID  : #E2E8F0
@@ -16,7 +16,7 @@
  */
 
 export const theme = {
-    // ── Backgrounds ──────────────────────────────
+    // --- Backgrounds ------------------------------
     bg: {
         page:    'linear-gradient(135deg, #050508 0%, #0C0C1D 40%, #0F0A1E 70%, #080510 100%)',
         surface: 'rgba(15, 10, 30, 0.75)',
@@ -26,7 +26,7 @@ export const theme = {
         input:   'rgba(10, 8, 20, 0.8)',
     },
 
-    // ── Accent Colors ─────────────────────────────
+    // --- Accent Colors -----------------------------
     color: {
         primary:   '#8B5CF6',   // violet-500
         secondary: '#6366F1',   // indigo-500
@@ -35,7 +35,7 @@ export const theme = {
         muted:     '#C4B5FD',   // violet-300 (text on dark)
     },
 
-    // ── Gradients ─────────────────────────────────
+    // --- Gradients ---------------------------------
     gradient: {
         primary:  'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)',
         text:     'linear-gradient(135deg, #FFFFFF 0%, #C4B5FD 40%, #A78BFA 100%)',
@@ -46,7 +46,7 @@ export const theme = {
         cardHover:'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.14))',
     },
 
-    // ── Borders ───────────────────────────────────
+    // --- Borders -----------------------------------
     border: {
         default: 'rgba(139, 92, 246, 0.25)',
         subtle:  'rgba(139, 92, 246, 0.15)',
@@ -54,7 +54,7 @@ export const theme = {
         hover:   'rgba(139, 92, 246, 0.7)',
     },
 
-    // ── Text ──────────────────────────────────────
+    // --- Text --------------------------------------
     text: {
         high:    '#FFFFFF',
         mid:     '#E2E8F0',
@@ -63,7 +63,7 @@ export const theme = {
         accent:  '#A78BFA',   // violet-400
     },
 
-    // ── Shadows / Glows ───────────────────────────
+    // --- Shadows / Glows ---------------------------
     shadow: {
         button:     '0 10px 30px rgba(124,58,237,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
         buttonHover:'0 20px 50px rgba(124,58,237,0.6)',
@@ -72,14 +72,14 @@ export const theme = {
         image:      '0 30px 80px rgba(0,0,0,0.6), 0 0 40px rgba(124,58,237,0.25)',
     },
 
-    // ── Scrollbar ─────────────────────────────────
+    // --- Scrollbar ---------------------------------
     scrollbar: {
         track: '#050508',
         thumb: '#7C3AED',
         thumbHover: '#6366F1',
     },
 
-    // ── Selection highlight ───────────────────────
+    // --- Selection highlight -----------------------
     selection: {
         bg:   '#7C3AED',
         text: '#FFFFFF',

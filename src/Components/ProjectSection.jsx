@@ -104,7 +104,7 @@ const demoData = [
             "Real-time decrement of volunteer count using MongoDB $inc",
             "Sort volunteer posts by deadline",
             "Search functionality for post titles",
-            "Layout toggle: card view ⇄ table view",
+            "Layout toggle: card view and table view",
             "Framer Motion animations on homepage",
             "Protected routes persist after reload using JWT",
             "Toast/SweetAlert2 feedback on all actions",
@@ -186,16 +186,15 @@ const ProjectSection = () => {
                     variants={itemVariants}
                 >
                     <motion.span
-                        className='inline-block px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg'
+                        className='inline-block px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6'
                         style={{
-                            background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15))',
-                            border: '1px solid rgba(139,92,246,0.35)',
-                            color: '#C4B5FD',
-                            boxShadow: '0 0 20px rgba(124,58,237,0.15)'
+                            background: 'rgba(139, 92, 246, 0.1)',
+                            border: '1px solid rgba(139, 92, 246, 0.2)',
+                            color: '#A78BFA',
                         }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02, background: 'rgba(139, 92, 246, 0.15)' }}
                     >
-                        💼 Selected Works
+                        Portfolio Showcase
                     </motion.span>
                     <motion.h2
                         className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 sm:mb-6"

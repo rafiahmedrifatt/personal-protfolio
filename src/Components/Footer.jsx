@@ -228,23 +228,16 @@ const Footer = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2, duration: 0.6 }}
                         >
-                            © {currentYear} Rafi Ahmed Rifat. All rights reserved.
+                            (c) {currentYear} Rafi Ahmed Rifat. All rights reserved.
                         </motion.p>
                         <motion.p
                             className="text-xs sm:text-sm flex items-center"
-                            style={{ color: '#334155' }}
+                            style={{ color: '#475569' }}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 2.2, duration: 0.6 }}
                         >
-                            Made with{' '}
-                            <motion.span
-                                animate={{ scale: [1, 1.2, 1] }}
-                                transition={{ duration: 1, repeat: Infinity }}
-                            >
-                                <Heart className="w-3 h-3 sm:w-4 sm:h-4 mx-1 text-violet-500" />
-                            </motion.span>
-                            {' '}and lots of coffee
+                            Built with precision and purpose
                         </motion.p>
                     </div>
                 </div>

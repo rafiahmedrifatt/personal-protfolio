@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Palette, Terminal, Zap } from 'lucide-react';
 import { theme } from '../theme';
 
 const sectionVariants = {
@@ -35,36 +36,36 @@ const hoverLift = {
 
 const skillPillars = [
     {
-        title: 'Frontend Experience',
-        emoji: '🎨',
+        title: 'Frontend Engineering',
+        icon: <Palette className="w-7 h-7" />,
         description: 'Building responsive interfaces that feel polished, accessible, and resilient across devices.',
         highlights: [
-            'React & modern hooks architecture',
-            'Design systems with Tailwind & Radix',
-            'State orchestration via RTK / React Query',
-            'Framer Motion micro-interactions'
+            'React & Modern Hooks Architecture',
+            'Design Systems with Tailwind & Radix',
+            'State Management (RTK / React Query)',
+            'Framer Motion Micro-interactions'
         ]
     },
     {
-        title: 'Backend & Data',
-        emoji: '🛠️',
+        title: 'Backend & Architecture',
+        icon: <Terminal className="w-7 h-7" />,
         description: 'Stable APIs, clean data models, and real-world auth flows that scale with product needs.',
         highlights: [
             'RESTful APIs in Node.js & Express',
-            'MongoDB Atlas, aggregation, indexing',
-            'Auth, JWT, and role-based access',
-            'Third-party integrations (Stripe, Firebase)'
+            'MongoDB Architecture & Optimization',
+            'Secure Auth & Role-based Access',
+            'System Design & Performance'
         ]
     },
     {
-        title: 'Product Delivery',
-        emoji: '🚀',
+        title: 'Software Excellence',
+        icon: <Zap className="w-7 h-7" />,
         description: 'Shaping roadmaps, unblocking teams, and shipping iteratively with clear documentation.',
         highlights: [
-            'TypeScript-first workflow',
-            'Testing and QA with Jest & React Testing Library',
-            'Project planning & async collaboration',
-            'Continuous feedback loops with stakeholders'
+            'TypeScript-first Workflow',
+            'Comprehensive Testing (Jest / RTL)',
+            'CI/CD & Automated Deployment',
+            'Technical Documentation & Planning'
         ]
     }
 ];
@@ -147,11 +148,15 @@ const SkillsSection = () => {
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-14 h-14 rounded-full flex items-center justify-center text-3xl flex-shrink-0"
-                                        style={{ background: theme.gradient.card, border: `1px solid ${theme.border.subtle}` }}>
-                                        {pillar.emoji}
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                        style={{ 
+                                            background: 'rgba(139, 92, 246, 0.1)', 
+                                            border: `1px solid ${theme.border.subtle}`,
+                                            color: theme.color.primary2
+                                        }}>
+                                        {pillar.icon}
                                     </div>
-                                    <h3 className="text-2xl font-bold" style={{ color: theme.text.high }}>{pillar.title}</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold" style={{ color: theme.text.high }}>{pillar.title}</h3>
                                 </div>
                                 <p className="text-base leading-relaxed mb-8 font-light flex-grow" style={{ color: theme.text.mid }}>
                                     {pillar.description}
