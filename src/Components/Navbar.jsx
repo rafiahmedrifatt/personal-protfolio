@@ -24,14 +24,13 @@ const Navbar = () => {
             initial={{ y: -60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-                scrolled ? 'panel' : 'bg-transparent border-transparent'
-            }`}
+            className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'panel' : 'bg-transparent border-transparent'
+                }`}
         >
             <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
                 <a href="#home" className="font-mono text-sm tracking-widest text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
-                    RAR<span className="text-[var(--accent)]">.dev</span>
+                    RIFAT<span className="text-[var(--accent)]">.dev</span>
                 </a>
 
                 <ul className="hidden md:flex items-center gap-8 font-mono text-xs tracking-wider text-[var(--text-dim)]">
