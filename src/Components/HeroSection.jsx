@@ -16,9 +16,9 @@ const HeroSection = () => {
             <div className="absolute w-[70vw] h-[70vw] max-w-[720px] max-h-[720px] rounded-full border border-white/5 animate-spin-slow" />
             <div className="absolute w-[45vw] h-[45vw] max-w-[460px] max-h-[460px] rounded-full border border-white/[0.06] animate-spin-slow" style={{ animationDirection: 'reverse' }} />
 
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-24 pb-20 md:py-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
                 {/* text */}
-                <div className="text-center md:text-left order-2 md:order-1">
+                <div className="text-center md:text-left order-1">
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -73,14 +73,14 @@ const HeroSection = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.35, duration: 0.7 }}
-                    className="order-1 md:order-2 flex justify-center md:justify-end"
+                    className="hidden md:flex order-2 justify-center md:justify-end"
                 >
                     <div className="relative">
-                        <div className="absolute inset-8 rounded-full bg-[var(--accent)]/20 blur-[60px]" />
+                        <div className="absolute inset-4 md:inset-8 rounded-full bg-[var(--accent)]/20 blur-[40px] md:blur-[60px]" />
                         <img
                             src={profilePhoto}
                             alt="Rafi Ahmed Rifat"
-                            className="relative w-64 md:w-96 lg:w-[26rem] h-auto object-contain drop-shadow-2xl"
+                            className="relative w-44 sm:w-56 md:w-96 lg:w-[26rem] max-h-[38vh] md:max-h-none h-auto object-contain drop-shadow-2xl"
                         />
                     </div>
                 </motion.div>
