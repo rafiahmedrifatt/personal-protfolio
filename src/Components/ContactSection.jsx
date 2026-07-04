@@ -1,214 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const sectionVariants = {
-    hidden: { opacity: 0, y: 28 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: 'easeOut' }
-    }
-};
-
-const listVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.18 } }
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 18 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.45, ease: 'easeOut' }
-    }
-};
-
-const hoverLift = {
-    whileHover: {
-        y: -6,
-        scale: 1.01,
-        transition: { duration: 0.25, ease: 'easeOut' }
-    }
-};
-
-const contactMethods = [
-    {
-        label: 'Email',
-        value: 'rafiahmedrifat1@gmail.com',
-        href: 'mailto:rafiahmedrifat1@gmail.com',
-        bg: 'rgba(124,58,237,0.1)',
-        border: 'rgba(124,58,237,0.25)',
-        icon: (
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-        )
-    },
-    {
-        label: 'WhatsApp',
-        value: '+8801516549414',
-        href: 'http://wa.me/+8801516549414',
-        bg: 'rgba(99,102,241,0.1)',
-        border: 'rgba(99,102,241,0.25)',
-        icon: (
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-        )
-    },
-    {
-        label: 'Location',
-        value: 'Dhaka, Bangladesh',
-        href: null,
-        bg: 'rgba(79,70,229,0.1)',
-        border: 'rgba(79,70,229,0.25)',
-        icon: (
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        )
-    }
+const socials = [
+    { label: 'GitHub', href: 'https://github.com/rafiahmedrifatt' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rafiahmedrifatt/' },
+    { label: 'Email', href: 'mailto:developer@visiontillion.com' },
 ];
 
 const ContactSection = () => {
     return (
-        <motion.section
-            id="contact"
-            className="min-h-screen py-14 sm:py-16 lg:py-20 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #050508 0%, #0C0C1D 50%, #0F0A1E 100%)' }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-            {/* Glow orbs */}
-            <div className="pointer-events-none absolute inset-0">
-                <div
-                    className="absolute -top-12 -right-16 w-56 h-56 sm:w-72 sm:h-72 rounded-full"
-                    style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%)', filter: 'blur(50px)' }}
-                />
-                <div
-                    className="absolute bottom-0 -left-10 w-64 h-64 sm:w-80 sm:h-80 rounded-full"
-                    style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)', filter: 'blur(50px)' }}
-                />
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 relative z-10">
-
-                {/* Header */}
-                <motion.div className="text-center space-y-4" variants={cardVariants}>
-                    <span
-                        className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold"
-                        style={{
-                            background: 'rgba(139, 92, 246, 0.1)',
-                            border: '1px solid rgba(139, 92, 246, 0.2)',
-                            color: '#A78BFA',
-                        }}
-                    >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                        Get in Touch
-                    </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                        Open to New Opportunities
+        <section id="contact" className="relative py-28 px-6 bg-grid">
+            <div className="max-w-3xl mx-auto text-center relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <span className="font-mono text-xs text-[var(--accent)]">04 / CONTACT</span>
+                    <h2 className="mt-4 text-4xl md:text-6xl font-semibold text-gradient glow-text leading-tight">
+                        Let&apos;s build<br />something great
                     </h2>
-                    <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#94A3B8' }}>
-                        Whether you have a specific project requirement, an employment opportunity, or simply wish to connect, I am always open to professional inquiries.
+                    <p className="mt-6 text-[var(--text-dim)] text-lg">
+                        Got a project in mind or just want to say hi? My inbox is always open.
                     </p>
-                </motion.div>
 
-                <div className="grid gap-10 lg:grid-cols-[2fr_1.5fr] lg:gap-12">
-
-                    {/* Contact Cards */}
-                    <motion.div className="space-y-6" variants={listVariants}>
-                        {contactMethods.map((method) => (
-                            <motion.div
-                                key={method.label}
-                                className="flex items-center gap-4 rounded-3xl p-5 sm:p-6 shadow-xl"
-                                style={{ background: method.bg, border: `1px solid ${method.border}` }}
-                                variants={cardVariants}
-                                {...hoverLift}
-                            >
-                                <div
-                                    className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex-shrink-0"
-                                    style={{
-                                        background: 'rgba(5,5,8,0.7)',
-                                        border: '1px solid rgba(139,92,246,0.25)'
-                                    }}
-                                >
-                                    {method.icon}
-                                </div>
-                                <div>
-                                    <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: '#94A3B8' }}>
-                                        {method.label}
-                                    </p>
-                                    {method.href ? (
-                                        <a
-                                            href={method.href}
-                                            className="text-lg font-semibold transition-colors duration-200"
-                                            style={{ color: '#E2E8F0' }}
-                                            onMouseEnter={e => e.target.style.color = '#C4B5FD'}
-                                            onMouseLeave={e => e.target.style.color = '#E2E8F0'}
-                                        >
-                                            {method.value}
-                                        </a>
-                                    ) : (
-                                        <p className="text-lg font-semibold" style={{ color: '#E2E8F0' }}>{method.value}</p>
-                                    )}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    {/* Email card */}
-                    <motion.div
-                        className="rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5"
-                        style={{
-                            background: 'rgba(15, 10, 30, 0.85)',
-                            border: '1px solid rgba(139,92,246,0.2)',
-                            boxShadow: '0 25px 50px rgba(0,0,0,0.5)'
-                        }}
-                        variants={cardVariants}
+                    <a
+                        href="mailto:developer@visiontillion.com"
+                        className="inline-block mt-10 px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-[var(--accent)] transition-colors"
                     >
-                        <h3 className="text-2xl font-bold text-white">Reach out via Email</h3>
-                        <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#94A3B8' }}>
-                            I typically respond within 24 hours. Please provide a brief overview of your inquiry or project requirements.
-                        </p>
-                        <div
-                            className="rounded-2xl px-5 py-4 text-sm"
-                            style={{
-                                background: 'rgba(124,58,237,0.1)',
-                                border: '1px solid rgba(139,92,246,0.25)',
-                                color: '#C4B5FD'
-                            }}
-                        >
-                            Click the button below to compose an email directly to my professional address.
-                        </div>
-                        <a
-                            href="mailto:rafiahmedrifat1@gmail.com"
-                            className="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-2xl text-white font-semibold shadow-lg transition-all duration-200 hover:-translate-y-1"
-                            style={{
-                                background: 'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)',
-                                boxShadow: '0 10px 30px rgba(124,58,237,0.4)'
-                            }}
-                            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 15px 40px rgba(124,58,237,0.6)'}
-                            onMouseLeave={e => e.currentTarget.style.boxShadow = '0 10px 30px rgba(124,58,237,0.4)'}
-                        >
-                            Compose Email
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h6m0 0v6m0-6l-8 8m-5-3v6h6" />
-                            </svg>
-                        </a>
-                        <div className="text-xs" style={{ color: '#475569' }}>
-                            Alternatively, you can reach me directly via WhatsApp for urgent inquiries.
-                        </div>
-                    </motion.div>
-                </div>
+                        Say hello →
+                    </a>
+
+                    <div className="mt-12 flex items-center justify-center gap-8 font-mono text-sm">
+                        {socials.map((s) => (
+                            <a
+                                key={s.label}
+                                href={s.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[var(--text-dim)] hover:text-[var(--accent)] transition-colors relative group"
+                            >
+                                {s.label}
+                                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all group-hover:w-full" />
+                            </a>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
-        </motion.section>
+        </section>
     );
 };
 
