@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-[var(--text-dim)]">
                 <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
-                    Rafi Ahmed Rifat — Full Stack Developer
+                    Rafi Ahmed Rifat <span className='text-[var(--accent)]'>Full Stack Developer</span>
                 </span>
                 <span>© {new Date().getFullYear()} · Built with React &amp; Tailwind</span>
             </div>

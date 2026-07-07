@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const stats = [
@@ -32,12 +33,12 @@ const AboutSection = () => {
                         <div className="space-y-5 text-[var(--text-dim)] text-base md:text-lg leading-relaxed">
                             <p>
                                 I&apos;m a full stack developer focused on turning ideas into
-                                polished, production-ready products. I care about performance,
+                                polished, production ready products. I care about performance,
                                 clean architecture, and interfaces that feel effortless.
                             </p>
                             <p>
-                                From designing REST APIs and databases to crafting pixel-tight
-                                React front-ends, I enjoy owning the whole journey — the kind of
+                                From designing REST APIs and databases to crafting pixel tight
+                                React front ends, I enjoy owning the whole journey — the kind of
                                 work where engineering meets craft.
                             </p>
                             <p className="text-white">
@@ -49,23 +50,23 @@ const AboutSection = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {stats.map((s, i) => (
-                                <motion.div
-                                    key={s.label}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="panel rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors"
-                                >
-                                    <div className="text-3xl md:text-4xl font-semibold text-gradient">
-                                        {s.value}
-                                    </div>
-                                    <div className="mt-2 font-mono text-xs text-[var(--text-dim)]">
-                                        {s.label}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                            <motion.div
+                                key={s.label}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="panel rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors"
+                            >
+                                <div className="text-3xl md:text-4xl font-semibold text-gradient">
+                                    {s.value}
+                                </div>
+                                <div className="mt-2 font-mono text-xs text-[var(--text-dim)]">
+                                    {s.label}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </motion.div>
             </div>
         </section>
